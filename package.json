@@ -1,0 +1,85 @@
+{
+  "name": "vue-dashboard",
+  "version": "1.0.0",
+  "description": "A Vue/Vuex dashboard featuring a module that let's insurers define their own custom inputs for any type of insurance.",
+  "main": "index.js",
+  "author": "Damir Vazgird <dvazgird@gmail.com>",
+  "homepage": "http://damirvazgird.com",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvzrd/vue-dashboard.git"
+  },
+  "keywords": [
+    "dashboard",
+    "vue",
+    "vuex",
+    "scss"
+  ],
+  "scripts": {
+    "dev": "node build/dev-server.js",
+    "start": "npm run dev",
+    "build": "node build/build.js",
+    "lint": "xo **/src/**/*.{vue,js} !node_modules/**",
+    "update:packages": "node wipe-dependencies.js && rm -rf node_modules && npm update --save-dev && npm update --save"
+  },
+  "dependencies": {
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-vue-app": "^2.0.0",
+    "chalk": "^2.3.0",
+    "copy-webpack-plugin": "^4.3.1",
+    "css-loader": "^0.28.9",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-vue": "^4.2.0",
+    "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-plugin": "^2.30.1",
+    "http-proxy-middleware": "^0.17.4",
+    "node-sass": "^4.7.2",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "sass-loader": "^6.0.6",
+    "vue-loader": "^13.7.0",
+    "vue-style-loader": "^3.0.3",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "extends": "/.eslintrc",
+    "semicolon": false,
+    "esnext": true,
+    "envs": [
+      "browser"
+    ],
+    "ignores": [
+      "build/*.js",
+      "config/*.js"
+    ]
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
