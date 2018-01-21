@@ -13,22 +13,6 @@
   "rules": {
     "import/no-unresolved": 0,
     "import/no-unassigned-import": 0,
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "optionalDependencies": [
-          "test/unit/index.js"
-        ]
-      }
-    ],
-    "import/extensions": [
-      "error",
-      "always",
-      {
-        "js": "never",
-        "vue": "never"
-      }
-    ],
     "no-param-reassign": [
       "error",
       {
