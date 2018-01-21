@@ -5,26 +5,26 @@
       <th>Description</th>
       <th>Default</th>
     </tr>
-    <FieldListItem
-      v-for="field in fields"
-      :key="field.id"
-      :field="field"
+    <FieldTypeItem
+      v-for="fieldType in fieldTypes"
+      :key="fieldType.id"
+      :fieldType="fieldType"
     />
-    <tr class="table-row__fallback" v-if="!fields || fields.length === 0">
-      <td colspan="3">No Fields given</td>
+    <tr class="table-row__fallback" v-if="!fieldTypes || fieldTypes.length === 0">
+      <td colspan="3">No Field Types Given</td>
     </tr>
   </table>
 </template>
 
 <script>
-  import FieldListItem from './field_list_item';
+  import FieldTypeItem from './field_type_item';
   export default {
-    name: 'FieldList',
+    name: 'FieldTypeList',
     components: {
-      FieldListItem
+      FieldTypeItem
     },
     props: {
-      fields: {
+      fieldTypes: {
         type: Array
       }
     }

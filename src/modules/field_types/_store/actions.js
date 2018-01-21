@@ -1,9 +1,9 @@
 import api from '../_api';
 
-const getFields = context => {
-  api.fetchFields
+const getFieldTypes = context => {
+  api.fetchFieldTypes
     .then(response => {
-      context.commit('FIELDS_UPDATED', response);
+      context.commit('FIELD_TYPES_UPDATED', response);
     })
     .catch(error => {
       // eslint-disable-next-line
@@ -12,5 +12,5 @@ const getFields = context => {
 };
 
 export default {
-  getFields
+  getFieldTypes
 };

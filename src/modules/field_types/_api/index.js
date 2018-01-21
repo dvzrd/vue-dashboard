@@ -1,4 +1,4 @@
-const fetchFields = new Promise(resolve => {
+const fetchFieldTypes = new Promise(resolve => {
   setTimeout(() => {
     resolve([
       {
@@ -30,5 +30,5 @@ const fetchFields = new Promise(resolve => {
 });
 
 export default {
-  fetchFields
+  fetchFieldTypes
 };
