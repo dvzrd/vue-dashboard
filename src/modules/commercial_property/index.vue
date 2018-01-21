@@ -1,15 +1,17 @@
 <template>
-  <Container :fields="fields" />
+  <section class="container">
+    <FieldList :fields="fields" />
+  </section>
 </template>
 
 <script>
   import { mapGetters } from 'vuex';
   import store from './_store';
-  import Container from './_components/container';
+  import FieldList from './_components/field_list';
   export default {
     name: 'CommercialPropertyModule',
     components: {
-      Container
+      FieldList
     },
     computed: {
       ...mapGetters({

@@ -13,7 +13,7 @@
 <style lang="scss">
   // TODO: import globals from theme
   #app {
-    body {
+    td {
       color: #5d5d5d;
     }
   }
