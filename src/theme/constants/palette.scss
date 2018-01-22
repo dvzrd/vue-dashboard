@@ -1,0 +1,104 @@
+/**
+ * Theme Color Palette
+ *
+ * Reference for color names: http://chir.ag/projects/name-that-color
+ * Reference related to above: https://davidwalsh.name/sass-color-variables-dont-suck
+ * Reference for naming color variables: https://alexpate.uk/journal/naming-sass-color-variables/
+ * Referece for color naming conventions: https://codepen.io/nicetransition/pen/QjwbRg
+ */
+
+// Grayscale Colors - variables for neutral gray colors
+$light: #fff; // white
+$athens: #f0f3f5; // gray-100
+$loblolly: #c2cfd6; // gray-200
+$cadet: #a4b7c1; // gray-300
+$bali: #869fac; // gray-400
+$lynch: #678898; // gray-500
+$bayoux: #536c79; // gray-600
+$spruce: #364f54; // gray-700
+$night: #29363d; // gray-800
+$smoke: #151b1e; // gray-900
+$void: #000; // black
+
+// Branding Colors - variables for specified brand colors
+$bondie: #0191a9; // brand core
+$eastern: #219DA6; // brand accent
+$cerula: #018ea7; // brand base
+$lagoon: #01798E; // brand deepen
+$spruce: #364f54; // brand apex
+$mine: #202020; // brand contrast
+
+// Bonding Colors - variables for content based neutral colors
+$shaft: #272727; // bond apex
+$emperor: #373737; // bond accent
+$dove: #616161; // bond core
+$scorpion: #606060; // bond deepen
+$peon: #595959; // bond base
+
+// Grounding Colors - variables for contrasting gray colors
+$mercury: #e3e3e3; // ground base
+$alto: #dedede; // ground core
+$gray: #7f7f7f; // ground apex
+
+// Boosting Colors - variables for accenting bright colors
+$cobalt: #014aa9; // boost base
+$gem: #320C9D; // boost core
+$jam: #9d0c77; // boost apex
+
+// Service Colors - variables for response alert colors
+$viking: #63c2de; // serve info
+$emerald: #4dbd74; // serve pass
+$amber: #ffc107; // serve warn
+$carnation: #f86c6b; // serve fail
+
+// Brand Palette
+$brand: (
+  base: $cerula,
+  accent: $eastern,
+  core: $bondie,
+  deepen: $lagoon,
+  apex: $spruce,
+  contrast: $mine
+);
+
+// Canvas Palette
+$canvas: (
+  base: $light,
+  accent: $mine,
+  core: $lynch,
+  deepen: $mercury,
+  apex: $void,
+  contrast: $night
+);
+
+// Bond Palette
+$bond: (
+  base: $peon,
+  accent: $emperor,
+  core: $dove,
+  deepen: $scorpion,
+  apex: $shaft,
+  contrast: $light
+);
+
+// Ground Palette
+$ground: (
+  base: $mercury,
+  core: $alto,
+  apex: $gray
+);
+
+// Boost Palette
+$boost: (
+  base: $cobalt,
+  core: $gem,
+  apex: $jam
+);
+
+// Service Palette
+$serve: (
+  info: $viking,
+  pass: $emerald,
+  warn: $amber,
+  fail: $carnation
+);

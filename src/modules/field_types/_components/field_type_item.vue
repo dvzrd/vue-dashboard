@@ -8,7 +8,7 @@
 
 <script>
   export default {
-    name: 'FieldTypeItem',
+    name: 'field-type-item',
     props: {
       fieldType: {
         type: Object

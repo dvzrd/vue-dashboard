@@ -1,7 +1,11 @@
 <template>
-  <section class="container">
+  <figure class="module module--field-types">
+    <figcaption class="caption module-caption">
+      <h2 class="heading module-heading">Field Types</h2>
+    </figcaption>
+    <input type="text" placeholder="Filter" />
     <FieldTypesList :fieldTypes="fieldTypes" />
-  </section>
+  </figure>
 </template>
 
 <script>
@@ -9,7 +13,7 @@
   import store from './_store';
   import FieldTypesList from './_components/field_types_list';
   export default {
-    name: 'FieldTypesModule',
+    name: 'module-field-types',
     components: {
       FieldTypesList
     },

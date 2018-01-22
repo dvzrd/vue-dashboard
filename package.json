@@ -15,7 +15,6 @@
     "dashboard",
     "vue",
     "vuex",
-    "styled-components",
     "scss"
   ],
   "scripts": {
@@ -26,9 +25,9 @@
     "update:packages": "node wipe-dependencies.js && rm -rf node_modules && npm update --save-dev && npm update --save"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",
-    "vue-styled-components": "^1.2.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

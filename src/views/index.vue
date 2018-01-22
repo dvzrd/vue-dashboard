@@ -1,29 +1,22 @@
 <template>
-  <main class="view" id="home">
-    <h1 class="heading">Dashboard</h1>
-    <FieldTypesContainer />
+  <main class="view view-home" id="home">
+    <Hero />
+    <FieldTypesModule />
   </main>
 </template>
 
 <script>
-  import FieldTypesContainer from '@/modules/field_types'
+  import Hero from '@/components/hero';
+  import FieldTypesModule from '@/modules/field_types';
   export default {
-    name: 'app-home',
+    name: 'view-home',
     components: {
-      FieldTypesContainer
+      Hero,
+      FieldTypesModule
     }
-  }
+  };
 </script>
 
 <style lang="scss" scoped>
-  .view {
-    flex: 1;
-    padding: 1em;
-
-    .heading {
-      color: #222;
-      font-size: 3em;
-      text-transform: uppercase;
-    }
-  }
+  // Styles scoped for home view
 </style>

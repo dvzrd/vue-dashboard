@@ -1,0 +1,10 @@
+/**
+ * Theme Styles - to import theme stylesheets
+ */
+
+// Import core styles
+@import 'core/core';
+// Import variable overrides
+@import 'variables';
+// Import theme patches
+@import 'patches';

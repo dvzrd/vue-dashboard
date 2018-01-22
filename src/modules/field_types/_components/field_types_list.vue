@@ -19,7 +19,7 @@
 <script>
   import FieldTypeItem from './field_type_item';
   export default {
-    name: 'FieldTypeList',
+    name: 'field-types-list',
     components: {
       FieldTypeItem
     },
