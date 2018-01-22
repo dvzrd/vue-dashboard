@@ -1,0 +1,9 @@
+// Core Typography Styles
+
+html {
+  font-size: 16px;
+  text-rendering: optimizelegibility;
+  image-rendering: optimizequality;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

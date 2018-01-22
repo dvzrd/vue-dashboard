@@ -1,20 +1,24 @@
 <template>
-  <figure class="module module--field-types">
-    <figcaption class="caption module-caption">
-      <h2 class="heading module-heading">Field Types</h2>
-    </figcaption>
-    <input type="text" placeholder="Filter" />
-    <FieldTypesList :fieldTypes="fieldTypes" />
-  </figure>
+  <section class="wrapper module--field-types">
+    <figure class="container module-container">
+      <figcaption class="caption module-caption">
+        <h2 class="heading module-heading module-caption__heading">Field Types</h2>
+      </figcaption>
+      <FieldTypesFilter />
+      <FieldTypesList :fieldTypes="fieldTypes" />
+    </figure>
+  </section>
 </template>
 
 <script>
   import { mapGetters } from 'vuex';
   import store from './_store';
+  import FieldTypesFilter from './_components/field_types_filter';
   import FieldTypesList from './_components/field_types_list';
   export default {
     name: 'module-field-types',
     components: {
+      FieldTypesFilter,
       FieldTypesList
     },
     computed: {

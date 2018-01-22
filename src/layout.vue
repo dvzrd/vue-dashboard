@@ -1,19 +1,22 @@
 <template>
-  <div class="layout layout-dashboard" id="dashboard">
-    <layout-header></layout-header>
+  <div class="layout layout__dashboard" id="dashboard">
+    <dashboard-header></dashboard-header>
+    <dashboard-menu></dashboard-menu>
     <router-view></router-view>
-    <layout-footer></layout-footer>
+    <dashboard-footer></dashboard-footer>
   </div>
 </template>
 
 <script>
   import Header from '@/components/header';
+  import Menu from '@/components/menu';
   import Footer from '@/components/footer';
   export default {
-    name: 'layout',
+    name: 'layout-dashboard',
     components: {
-      'layout-header': Header,
-      'layout-footer': Footer
+      'dashboard-header': Header,
+      'dashboard-menu': Menu,
+      'dashboard-footer': Footer
     }
   };
 </script>
