@@ -18,6 +18,7 @@
   /* Import font-awesome icons library */
   @import '~font-awesome/css/font-awesome.min.css';
 </style>
+
 <style lang="scss">
   // Import theme styles for app
   @import './theme/styles';

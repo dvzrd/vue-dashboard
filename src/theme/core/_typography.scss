@@ -7,3 +7,136 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body, p, li, td, span {
+  text-rendering: unset;
+  font-feature-settings: unset;
+  font-family: map-get($font, 'base');
+  font-size: map-get($size, 'base');
+  font-weight: map-get($weight, 'base');
+  line-height: map-get($height, 'base');
+  color: map-get($bond, 'base');
+}
+
+h1, h2, h3,
+h4, h5, h6,
+thead, th {
+  position: relative;
+  flex: map-get($fill, 'base');
+  margin: map-get($gutter, 'apex');
+  color: map-get($bond, 'accent');
+  font-family: map-get($font, 'apex');
+  font-weight: map-get($weight, 'heavy');
+  line-height: map-get($height, 'apex');
+  letter-spacing: map-get($space, 'shy');
+
+  small {
+    display: block;
+    font-size: 50%;
+    font-weight: map-get($weight, 'base');
+    line-height: map-get($height, 'core');
+    margin-top: map-get($space, 'press');
+  }
+}
+
+h4, h5, h6 {
+  margin: map-get($gutter, 'plain');
+}
+
+h1 {
+  font-size: map-get($size, 'legend');
+}
+
+h2 {
+  font-size: map-get($size, 'lead');
+}
+
+h3 {
+  font-size: map-get($size, 'direct');
+}
+
+h4 {
+  font-size: map-get($size, 'brief');
+}
+
+h5 {
+  font-size: map-get($size, 'point');
+}
+
+h6 {
+  font-size: map-get($size, 'mark');
+}
+
+hr {
+  display: block;
+  outline: none;
+  padding: 0;
+  border: 0;
+  border-top: map-get($border, 'base') map-get($ground, apex);
+  height: map-get($space, 'dash');
+  margin: map-get($gutter, 'fluid');
+}
+
+img,
+video {
+  width: 100%;
+  margin: 0 auto;
+}
+
+pre,
+core {
+  font-family: map-get($font, 'code');
+}
+
+p, figure {
+  flex: map-get($fill, 'base');
+  margin: map-get($gutter, 'base');
+}
+
+b, strong, figcaption {
+  margin: map-get($gutter, 'base');
+  font-weight: map-get($weight, 'core');
+}
+
+sup, sub, code {
+  font-weight: map-get($weight, 'heavy');
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  flex: map-get($fill, 'base');
+  color: map-get($brand, 'base');
+  transition: map-get($shift, 'base');;
+
+  &:hover,
+  &:focus {
+    color: map-get($brand, 'accent');
+  }
+
+  &:active {
+    color: map-get($brand, 'deepen');
+  }
+
+  &:visited {
+    text-decoration: underline;
+    color: map-get($fill, 'apex');
+  }
+}
+
+blockquote {
+  font-style: italic;
+  font-weight: map-get($weight, 'core');
+  margin: map-get($gutter, 'spread');
+}
+
+ol, ul {
+  margin: map-get($gutter, 'chain');;
+  padding-left: map-get($space, 'annex');
+  font-weight: map-get($weight, 'core');
+}
+
+li {
+  margin-bottom: map-get($space, 'split');
+}

@@ -1,28 +1,32 @@
 // Core Layout Styles
-
-.layout {
+.layout__wrapper {
   position: relative;
   display: flex;
 	min-height: 100vh;
   flex-direction: column;
 
-  &.layout--dashboard {
-    background: map-get($canvas, base);
-  }
-
   .header {
     z-index: 4;
   }
 
-  .aside {
+  .sidebar {
     z-index: 3;
   }
 
-  .view {
+  .main {
+    flex: 1;
     z-index: 2;
   }
 
   .footer {
     z-index: 1;
+  }
+
+  > .container {
+    display: flex;
+    width: 100%;
+    max-width: none;
+	  min-height: 100vh;
+    flex-direction: column;
   }
 }

@@ -99,6 +99,10 @@ This is a high level outline of the file structure, for a more detailed look int
 |    |    ├── vendor                            # vendor stylesheets and variables
 |    |    ├── _patches.scss                     # global style overrides
 |    |    ├── _variables.scss                   # global variable overrides
+|    |    ├── composition.scss                  # design compositin variables for theme
+|    |    ├── content.scss                      # design content variables for theme
+|    |    ├── palette.scss                      # color palette variables for theme
+|    |    ├── structure.scss                    # design structure variables for theme
 |    |    └── inject.scss                       # theme injection of global styles
 |    ├── views                                  # vue templates for router views
 |    |    └── index.vue                         # home view index route

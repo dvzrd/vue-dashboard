@@ -9,8 +9,10 @@ const fetchConfig = new Promise(resolve => {
       sidebarExtend: false, // change default state of sidebar menu
       notifications: false, // hide or show notifications in topbar
       breadcrumbs: false, // hide or show breadcrumbs in view
-      user: 'John Jones', // name of logged in user
-      footer: '©2018, BriteCore. All rights reserved.' // footer content
+      logo: '/static/logo.png', // dashboard logo image url
+      avatar: '/static/avatar.png', // user avatar image url
+      user: 'Art Vandelay', // name of logged in user
+      legal: '©2018, BriteCore. All rights reserved.' // copyright message or legal print
     });
   }, 250);
 });

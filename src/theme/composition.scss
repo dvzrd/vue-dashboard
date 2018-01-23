@@ -1,0 +1,91 @@
+/**
+ * Theme Composition - to configure constant variables and mixins used for design composition
+ */
+
+// Speed - variables for transition/transform timing
+$speed: (
+  base: 250ms,
+  core: 500ms,
+  apex: 1000ms
+);
+
+// Space - variables for various spacing dimensions
+$space: (
+  shy: 0.05em,
+  dash: 0.1em,
+  bubble: 0.15em,
+  press: 0.25em,
+  nudge: 0.3em,
+  split: 0.5em,
+  frame: 0.75em,
+  base: 1em,
+  trim: 0.9em,
+  convex: 1.25em,
+  annex: 1.5em,
+  lead: 1.75em,
+  clear: 2em,
+  mast: 2.5em,
+  core: 3em,
+  hill: 3.5em,
+  brand: 4em,
+  legend: 4.5em,
+  hero: 5em,
+  apex: 6em
+);
+
+// Fill - variables for flex-box fills
+$fill: (
+  base: 1 100%,
+  core: 1 75%,
+  apex: 1 66.6666%,
+  half: 1 50%,
+  third: 1 33.3333%,
+  quarter: 1 25%
+);
+
+// Gutter - variables for margin and padding
+$gutter: (
+  base: 0 0 1em,
+  core: 4em 0 2em,
+  apex: 2.15em 0 1em,
+  hero: 1.15em 0 2.5em,
+  fluid: 0 auto,
+  liquid: 0 auto 1em,
+  moat: 1em auto,
+  clear: 2em auto,
+  spread: 2em 1em,
+  plain: 1em 0,
+  chain: 1em 0 2em,
+  media: 2em -2em,
+  action: 0.75em 1.75em,
+  fit: 0.5em 0.75em,
+  label: 0.25em 0.5em,
+  note: 0.5em 0
+);
+
+// Shadow - variables for box-shadow
+$shadow: (
+  base: 0.15rem 0.15rem 0.5rem 0,
+  glow: 0 0 0.1rem 0.05rem,
+  blur: 0 0 0.25rem 0.15rem,
+  strip: 0 0 0 0.5rem,
+  frame: 0 0 0 1rem
+);
+
+// Border - variables for border
+$border: (
+  base: 0.1rem solid,
+  core: 0.15rem solid,
+  apex: 0.2rem solid,
+  lead: 0.05rem solid,
+  strip: 0.5rem solid,
+  frame: 1rem solid,
+  mast: 0.25rem 0.25rem 0 0
+);
+
+// Shift - variables for transition and transform
+$shift: (
+  base: all map-get($speed, 'base') ease-in-out,
+  core: all map-get($speed, 'core') ease-in-out,
+  apex: all map-get($speed, 'apex') ease-in-out,
+);

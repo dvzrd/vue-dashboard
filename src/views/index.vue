@@ -1,8 +1,8 @@
 <template>
-  <main class="view home__view" id="home">
+  <div class="view home__view" id="home">
     <Hero />
     <FieldTypesModule />
-  </main>
+  </div>
 </template>
 
 <script>

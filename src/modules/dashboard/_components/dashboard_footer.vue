@@ -17,7 +17,7 @@
 
 <style lang="scss" scoped>
   .footer__dashboard {
-    padding: 1em;
+    padding: 0.5em;
 
     .footer__dashboard--copyright {
       margin: 0;

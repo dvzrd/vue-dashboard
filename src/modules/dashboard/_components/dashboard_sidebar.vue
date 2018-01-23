@@ -144,10 +144,10 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../../theme/constants/palette';
+  @import '../../../theme/palette';
 
   .dashboard__sidebar {
-    background: map-get($brand, 'contrast');
+    background: map-get($brand, 'apex');
 
     .dashboard__sidebar--button {
       margin: 0.5em;
