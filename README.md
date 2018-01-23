@@ -61,17 +61,14 @@ This is a high level outline of the file structure, for a more detailed look int
 │    └── index.js                               # webpack config module
 ├── node_modules                                # node dependencies - reference ##Dependencies for details
 ├── src                                         # source code for client-side app - alt names: client, app
-│    ├── api                                    # separate data service layer for app
-|    |    └── index.js                          # simulated get/fetch response with static data
 │    ├── components                             # contains common app components - examples: hero, footer
 |    |    └── component_namespace.vue           # name of vue component - examples: sidebar
 │    ├── modules                                # contains all modules for app
 │    |    └── module_namespace                  # name of module by feature - examples: commercial_property
 |    |         ├── _api                         # separate data service layer for module
 |    |         |    └── index.js                # simulated get/fetch response with static data
-|    |         ├── _components                  # vue components for module
-|    |         |    ├── data_edges_node.vue     # vue component for data node item
-|    |         |    └── data_edges.vue          # vue component for data edges list
+|    |         ├── _components                  # contains vue child components for module
+|    |         |    └── module_component.vue    # private vue component used by module - examples: menu-list, menu-item
 |    |         ├── _store                       # vuex store files for module
 |    |         |    ├── actions.js              # ui and api actions for module
 |    |         |    ├── getters.js              # ui and api getters for module
@@ -84,16 +81,16 @@ This is a high level outline of the file structure, for a more detailed look int
 |    |    └── index.js                          # main store exports for app
 |    ├── theme                                  # main theme files to unify design for app
 |    |    ├── core                              # global core theme styles
-|    |    |    ├── _action.scss                 # theme styles for action elements
-|    |    |    ├── _animate.scss                # theme animation keyframes
-|    |    |    ├── _container.scss              # theme styles for container elements
-|    |    |    ├── _context.scss                # theme styles for content/text elements
-|    |    |    ├── _heading.scss                # theme styles for heading elements
-|    |    |    ├── _layout.scss                 # theme styles for layout
+|    |    |    ├── _animate.scss                # theme keyframes for animations
+|    |    |    ├── _container.scss              # theme styles for elements used to contain children
+|    |    |    ├── _context.scss                # theme styles for elements used to display text
+|    |    |    ├── _frame.scss                  # theme styles for elements used to frame columns
+|    |    |    ├── _heading.scss                # theme styles for elements used to display heading
+|    |    |    ├── _layout.scss                 # theme styles for layout wrapper
+|    |    |    ├── _listing.scss                # theme styles for elements used to list data
 |    |    |    ├── _media.scss                  # theme styles for media elements
 |    |    |    ├── _normalize.scss              # normalize styles for theme
 |    |    |    ├── _print.scss                  # theme print styles
-|    |    |    ├── _template.scss               # theme styles for template
 |    |    |    ├── _typography.scss             # theme typography
 |    |    |    ├── _view.scss                   # theme styles for view
 |    |    |    ├── _wrapper.scss                # theme styles for wrapper elements

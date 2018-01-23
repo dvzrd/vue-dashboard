@@ -6,18 +6,17 @@
 @import 'typography';
 // Animations
 @import 'animate';
-// Core Components
-@import 'wrapper';
+// Components
 @import 'container';
-@import 'media';
-@import 'heading';
 @import 'context';
-@import 'action';
-// Layout Options
+@import 'frame';
+@import 'heading';
+@import 'listing';
+@import 'media';
+@import 'wrapper';
+// Layout
 @import 'layout';
-// Template Options
-@import 'template';
-// View Options
+// View
 @import 'view';
-// Print Options
+// Print
 @import 'print';

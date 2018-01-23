@@ -1,5 +1,5 @@
 <template>
-  <main class="view view-home" id="home">
+  <main class="view home__view" id="home">
     <Hero />
     <FieldTypesModule />
   </main>

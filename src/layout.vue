@@ -1,22 +1,15 @@
 <template>
-  <div class="layout layout__dashboard" id="dashboard">
-    <dashboard-header></dashboard-header>
-    <dashboard-menu></dashboard-menu>
-    <router-view></router-view>
-    <dashboard-footer></dashboard-footer>
+  <div class="wrapper layout__wrapper" id="layout">
+    <DashboardModule />
   </div>
 </template>
 
 <script>
-  import Header from '@/components/header';
-  import Menu from '@/components/menu';
-  import Footer from '@/components/footer';
+  import DashboardModule from '@/modules/dashboard'
   export default {
     name: 'layout-dashboard',
     components: {
-      'dashboard-header': Header,
-      'dashboard-menu': Menu,
-      'dashboard-footer': Footer
+      DashboardModule
     }
   };
 </script>
