@@ -16,12 +16,16 @@
 </script>
 
 <style lang="scss" scoped>
+  // import design composition variables
+  @import '../../../theme/composition';
+  // import design content variables
+  @import '../../../theme/content';
+
   .footer__dashboard {
-    padding: 0.5em;
+    padding: $space-split $space-base;
 
     .footer__dashboard--copyright {
       margin: 0;
-      font-size: 0.75em; // TODO: inherit from `context--legal` class
     }
   }
 </style>

@@ -3,89 +3,76 @@
  */
 
 // Speed - variables for transition/transform timing
-$speed: (
-  base: 250ms,
-  core: 500ms,
-  apex: 1000ms
-);
+$speed-base: 250ms;
+$speed-core: 500ms;
+$speed-apex: 1000ms;
 
 // Space - variables for various spacing dimensions
-$space: (
-  shy: 0.05em,
-  dash: 0.1em,
-  bubble: 0.15em,
-  press: 0.25em,
-  nudge: 0.3em,
-  split: 0.5em,
-  frame: 0.75em,
-  base: 1em,
-  trim: 0.9em,
-  convex: 1.25em,
-  annex: 1.5em,
-  lead: 1.75em,
-  clear: 2em,
-  mast: 2.5em,
-  core: 3em,
-  hill: 3.5em,
-  brand: 4em,
-  legend: 4.5em,
-  hero: 5em,
-  apex: 6em
-);
+$space-shy: 0.05em;
+$space-dash: 0.1em;
+$space-bubble: 0.15em;
+$space-press: 0.25em;
+$space-nudge: 0.3em;
+$space-split: 0.5em;
+$space-frame: 0.75em;
+$space-base: 1em;
+$space-trim: 0.9em;
+$space-convex: 1.25em;
+$space-annex: 1.5em;
+$space-lead: 1.75em;
+$space-clear: 2em;
+$space-mast: 2.5em;
+$space-core: 3em;
+$space-hill: 3.5em;
+$space-brand: 4em;
+$space-legend: 4.5em;
+$space-hero: 5em;
+$space-apex: 6em;
 
 // Fill - variables for flex-box fills
-$fill: (
-  base: 1 100%,
-  core: 1 75%,
-  apex: 1 66.6666%,
-  half: 1 50%,
-  third: 1 33.3333%,
-  quarter: 1 25%
-);
+$fill-base: 1 100%;
+$fill-core: 1 75%;
+$fill-apex: 1 66.6666%;
+$fill-half: 1 50%;
+$fill-third: 1 33.3333%;
+$fill-quarter: 1 25%;
 
 // Gutter - variables for margin and padding
-$gutter: (
-  base: 0 0 1em,
-  core: 4em 0 2em,
-  apex: 2.15em 0 1em,
-  hero: 1.15em 0 2.5em,
-  fluid: 0 auto,
-  liquid: 0 auto 1em,
-  moat: 1em auto,
-  clear: 2em auto,
-  spread: 2em 1em,
-  plain: 1em 0,
-  chain: 1em 0 2em,
-  media: 2em -2em,
-  action: 0.75em 1.75em,
-  fit: 0.5em 0.75em,
-  label: 0.25em 0.5em,
-  note: 0.5em 0
-);
+$gutter-base: 0 0 1em;
+$gutter-core: 4em 0 2em;
+$gutter-apex: 2.15em 0 1em;
+$gutter-hero: 1.15em 0 2.5em;
+$gutter-fluid: 0 auto;
+$gutter-liquid: 0 auto 1em;
+$gutter-moat: 1em auto;
+$gutter-clear: 2em auto;
+$gutter-spread: 2em 1em;
+$gutter-plain: 1em 0;
+$gutter-chain: 1em 0 2em;
+$gutter-media: 2em -2em;
+$gutter-action: 0.75em 1.75em;
+$gutter-fit: 0.5em 0.75em;
+$gutter-label: 0.25em 0.5em;
+$gutter-note: 0.5em 0;
 
 // Shadow - variables for box-shadow
-$shadow: (
-  base: 0.15rem 0.15rem 0.5rem 0,
-  glow: 0 0 0.1rem 0.05rem,
-  blur: 0 0 0.25rem 0.15rem,
-  strip: 0 0 0 0.5rem,
-  frame: 0 0 0 1rem
-);
+$shadow-base: 0.15rem 0.15rem 0.5rem 0;
+$shadow-glow: 0 0 0.1rem 0.05rem;
+$shadow-blur: 0 0 0.25rem 0.15rem;
+$shadow-strip: 0 0 0 0.5rem;
+$shadow-frame: 0 0 0 1rem;
+$shadow-drop: -0.05em 0.05rem 0.1rem 0;
 
 // Border - variables for border
-$border: (
-  base: 0.1rem solid,
-  core: 0.15rem solid,
-  apex: 0.2rem solid,
-  lead: 0.05rem solid,
-  strip: 0.5rem solid,
-  frame: 1rem solid,
-  mast: 0.25rem 0.25rem 0 0
-);
+$border-base: 0.1rem solid;
+$border-core: 0.15rem solid;
+$border-apex: 0.2rem solid;
+$border-lead: 0.05rem solid;
+$border-strip: 0.5rem solid;
+$border-frame: 1rem solid;
+$border-mast: 0.25rem 0.25rem 0 0;
 
 // Shift - variables for transition and transform
-$shift: (
-  base: all map-get($speed, 'base') ease-in-out,
-  core: all map-get($speed, 'core') ease-in-out,
-  apex: all map-get($speed, 'apex') ease-in-out,
-);
+$shift-base: all $speed-base ease-in-out;
+$shift-core: all $speed-core ease-in-out;
+$shift-apex: all $speed-apex ease-in-out;

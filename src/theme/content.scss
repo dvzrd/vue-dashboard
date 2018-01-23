@@ -2,41 +2,30 @@
  * Theme Content - to configure constant variables and mixins used for design content
  */
 
-$sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
-$monospace: Menlo, Monaco, Consolas, monospace;
-
 // Font - variables for font-family
-$font: (
-  base: $sans-serif,
-  apex: $sans-serif,
-  code: $monospace
-);
+$font-base: 'Open Sans', Helvetica, Arial, sans-serif;
+$font-apex: $font-base;
+$font-code: Menlo, Monaco, Consolas, monospace;
 
 // Size - variables for font-size
-$size: (
-  sub: 0.5em, // small, sub, sup
-  legal: 0.75em, // small, time
-  base: 1em, // p, body, a, button
-  mark: 1.15em, // h6, strong, th
-  point: 1.25em, // h6, h5
-  brief: 1.5em, // h5, h4
-  direct: 1.75em, // h4, h3
-  lead: 2em, // h3, h2
-  legend: 2.5em, // h2, h1
-  hero: 3.5em // h1
-);
+$size-sub: 0.5em; // small; sub; sup
+$size-legal: 0.75em; // small; time
+$size-base: 1em; // p; body; a; button
+$size-mark: 1.05em; // h6; strong; th
+$size-point: 1.15em; // h6; h5
+$size-brief: 1.3em; // h5; h4
+$size-direct: 1.55em; // h4; h3
+$size-lead: 1.75em; // h3; h2
+$size-legend: 2em; // h2; h1
+$size-hero: 2.3em; // h1
 
 // Weight - variables for font-weight
-$weight: (
-  light: 300,
-  base: 400,
-  core: 600,
-  heavy: 700
-);
+$weight-light: 300;
+$weight-base: 400;
+$weight-core: 600;
+$weight-heavy: 700;
 
 // Height - variables for line-height
-$height: (
-  base: 1.5,
-  core: 1.25,
-  apex: 1
-);
+$height-base: 1.5;
+$height-core: 1.25;
+$height-apex: 1;

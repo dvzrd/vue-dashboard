@@ -11,60 +11,59 @@ html {
 body, p, li, td, span {
   text-rendering: unset;
   font-feature-settings: unset;
-  font-family: map-get($font, 'base');
-  font-size: map-get($size, 'base');
-  font-weight: map-get($weight, 'base');
-  line-height: map-get($height, 'base');
-  color: map-get($bond, 'base');
+  font-family: $font-base;
+  font-size: $size-base;
+  font-weight: $weight-base;
+  line-height: $height-base;
+  color: $bond-base;
 }
 
 h1, h2, h3,
 h4, h5, h6,
 thead, th {
   position: relative;
-  flex: map-get($fill, 'base');
-  margin: map-get($gutter, 'apex');
-  color: map-get($bond, 'accent');
-  font-family: map-get($font, 'apex');
-  font-weight: map-get($weight, 'heavy');
-  line-height: map-get($height, 'apex');
-  letter-spacing: map-get($space, 'shy');
+  flex: $fill-base;
+  margin: $gutter-apex;
+  color: $bond-accent;
+  font-family: $font-apex;
+  font-weight: $weight-heavy;
+  line-height: $height-apex;
 
   small {
     display: block;
     font-size: 50%;
-    font-weight: map-get($weight, 'base');
-    line-height: map-get($height, 'core');
-    margin-top: map-get($space, 'press');
+    font-weight: $weight-base;
+    line-height: $height-core;
+    margin-top: $space-press;
   }
 }
 
 h4, h5, h6 {
-  margin: map-get($gutter, 'plain');
+  margin: $gutter-plain;
 }
 
 h1 {
-  font-size: map-get($size, 'legend');
+  font-size: $size-legend;
 }
 
 h2 {
-  font-size: map-get($size, 'lead');
+  font-size: $size-lead;
 }
 
 h3 {
-  font-size: map-get($size, 'direct');
+  font-size: $size-direct;
 }
 
 h4 {
-  font-size: map-get($size, 'brief');
+  font-size: $size-brief;
 }
 
 h5 {
-  font-size: map-get($size, 'point');
+  font-size: $size-point;
 }
 
 h6 {
-  font-size: map-get($size, 'mark');
+  font-size: $size-mark;
 }
 
 hr {
@@ -72,9 +71,9 @@ hr {
   outline: none;
   padding: 0;
   border: 0;
-  border-top: map-get($border, 'base') map-get($ground, apex);
-  height: map-get($space, 'dash');
-  margin: map-get($gutter, 'fluid');
+  border-top: $border-base $ground-apex;
+  height: $space-dash;
+  margin: $gutter-fluid;
 }
 
 img,
@@ -85,58 +84,58 @@ video {
 
 pre,
 core {
-  font-family: map-get($font, 'code');
+  font-family: $font-code;
 }
 
 p, figure {
-  flex: map-get($fill, 'base');
-  margin: map-get($gutter, 'base');
+  flex: $fill-base;
+  margin: $gutter-base;
 }
 
 b, strong, figcaption {
-  margin: map-get($gutter, 'base');
-  font-weight: map-get($weight, 'core');
+  margin: $gutter-base;
+  font-weight: $weight-core;
 }
 
 sup, sub, code {
-  font-weight: map-get($weight, 'heavy');
+  font-weight: $weight-heavy;
 }
 
 a {
   cursor: pointer;
   text-decoration: none;
   position: relative;
-  flex: map-get($fill, 'base');
-  color: map-get($brand, 'base');
-  transition: map-get($shift, 'base');;
+  flex: $fill-base;
+  color: $brand-base;
+  transition: $shift-base;
 
   &:hover,
   &:focus {
-    color: map-get($brand, 'accent');
+    color: $brand-accent;
   }
 
   &:active {
-    color: map-get($brand, 'deepen');
+    color: $brand-deepen;
   }
 
   &:visited {
     text-decoration: underline;
-    color: map-get($fill, 'apex');
+    color: $brand-apex;
   }
 }
 
 blockquote {
   font-style: italic;
-  font-weight: map-get($weight, 'core');
-  margin: map-get($gutter, 'spread');
+  font-weight: $weight-core;
+  margin: $gutter-spread;
 }
 
 ol, ul {
-  margin: map-get($gutter, 'chain');;
-  padding-left: map-get($space, 'annex');
-  font-weight: map-get($weight, 'core');
+  margin: $gutter-chain;
+  padding-left: $space-frame;
+  font-weight: $weight-core;
 }
 
 li {
-  margin-bottom: map-get($space, 'split');
+  margin-bottom: $space-split;
 }

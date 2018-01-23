@@ -16,7 +16,10 @@
 </script>
 
 <style lang="scss" scoped>
+  // import design composition variables
+  @import '../../../theme/composition';
+
   .dashboard__breadcrumbs--menu {
-    padding: 1em;
+    padding: $space-base;
   }
 </style>

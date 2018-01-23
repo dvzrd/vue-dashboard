@@ -26,7 +26,7 @@ $eastern: #219DA6; // brand accent
 $cerula: #018ea7; // brand base
 $lagoon: #01798E; // brand deepen
 $spruce: #364f54; // brand apex
-$mine: #202020; // brand contrast
+$sherpa: #004954; // brand contrast
 
 // Bonding Colors - variables for content based neutral colors
 $shaft: #272727; // bond apex
@@ -52,53 +52,41 @@ $amber: #ffc107; // serve warn
 $carnation: #f86c6b; // serve fail
 
 // Brand Palette
-$brand: (
-  base: $cerula,
-  accent: $eastern,
-  core: $bondie,
-  deepen: $lagoon,
-  apex: $spruce,
-  contrast: $mine
-);
+$brand-base: $cerula;
+$brand-accent: $eastern;
+$brand-core: $bondie;
+$brand-deepen: $lagoon;
+$brand-apex: $spruce;
+$brand-contrast: $sherpa;
 
 // Canvas Palette
-$canvas: (
-  base: $light,
-  accent: $mercury,
-  core: $cadet,
-  deepen: $loblolly,
-  apex: $lynch,
-  contrast: $night
-);
+$canvas-base: $light;
+$canvas-accent: $mercury;
+$canvas-core: $cadet;
+$canvas-deepen: $loblolly;
+$canvas-apex: $lynch;
+$canvas-contrast: $night;
 
 // Bond Palette
-$bond: (
-  base: $peon,
-  accent: $emperor,
-  core: $dove,
-  deepen: $scorpion,
-  apex: $shaft,
-  contrast: $light
-);
+$bond-base: $peon;
+$bond-accent: $emperor;
+$bond-core: $dove;
+$bond-deepen: $scorpion;
+$bond-apex: $shaft;
+$bond-contrast: $light;
 
 // Ground Palette
-$ground: (
-  base: $mercury,
-  core: $alto,
-  apex: $gray
-);
+$ground-base: $mercury;
+$ground-core: $alto;
+$ground-apex: $gray;
 
 // Boost Palette
-$boost: (
-  base: $cobalt,
-  core: $gem,
-  apex: $jam
-);
+$boost-base: $cobalt;
+$boost-core: $gem;
+$boost-apex: $jam;
 
 // Service Palette
-$serve: (
-  info: $viking,
-  pass: $emerald,
-  warn: $amber,
-  fail: $carnation
-);
+$serve-info: $viking;
+$serve-pass: $emerald;
+$serve-warn: $amber;
+$serve-fail: $carnation;

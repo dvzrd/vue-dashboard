@@ -1,8 +1,8 @@
 <template>
-  <header class="wrapper hero">
-    <figure class="container hero-container">
-      <figcaption class="caption hero-caption">
-        <h1 class="heading hero-heading hero-caption__heading">
+  <header class="header hero dashboard__hero">
+    <figure class="container dashboard__hero--container">
+      <figcaption class="caption caption__hero">
+        <h1 class="heading heading__hero">
           Commercial Property
         </h1>
       </figcaption>
@@ -17,8 +17,10 @@
 </script>
 
 <style lang="scss" scoped>
-  .hero-heading {
-    font-size: 2em;
-    text-transform: uppercase;
+  // import design content variables
+  @import '../theme/content';
+
+  .heading__hero {
+    font-size: $size-hero;
   }
 </style>

@@ -5,13 +5,20 @@
   >
     <DashboardTopbar
       :dropdownOpen="dropdownOpen"
+      :sidebarExtend="sidebarExtend"
       :logo="config.logo"
       :avatar="config.avatar"
       :user="config.user"
     />
-    <DashboardSidebar :sidebarExtend="sidebarExtend" />
-    <DashboardMain :breadcrumbs="config.breadcrumbs" />
-    <DashboardFooter :copyright="config.legal" />
+    <DashboardSidebar
+      :sidebarExtend="sidebarExtend"
+    />
+    <DashboardMain
+      :sidebarExtend="sidebarExtend"
+      :breadcrumbs="config.breadcrumbs"
+      :footer="config.footer"
+      :legal="config.legal"
+    />
   </section>
 </template>
 
@@ -21,14 +28,12 @@
   import DashboardTopbar from './_components/dashboard_topbar';
   import DashboardSidebar from './_components/dashboard_sidebar';
   import DashboardMain from './_components/dashboard_main';
-  import DashboardFooter from './_components/dashboard_footer';
   export default {
     name: 'module-dashboard',
     components: {
       DashboardTopbar,
       DashboardSidebar,
-      DashboardMain,
-      DashboardFooter
+      DashboardMain
     },
     computed: {
       ...mapGetters({

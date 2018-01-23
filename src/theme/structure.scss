@@ -3,31 +3,25 @@
  */
 
 // Frame - variables for different size frames
-$frame: (
-  bar: 8em,
-  stamp: 12em,
-  label: 16em,
-  box: 20em,
-  card: 24em,
-  net: 36em,
-  multi: 60em
-);
+$frame-bar: 10em;
+$frame-stamp: 12em;
+$frame-label: 16em;
+$frame-box: 20em;
+$frame-card: 24em;
+$frame-net: 36em;
+$frame-multi: 60em;
 
 // Container - variables for responsive container sizes
-$container: (
-  base: 48, // 768px
-  tablet: 50, // 800px
-  laptop: 54 // 864px
-);
+$container-base: 48em; // 768px
+$container-tablet: 50; // 800px
+$container-laptop: 54; // 864px
 
 // Media - variables for media device queries
-$media: (
-  phone: 20, // 320px
-  phablet: 30, // 480px
-  tablet: 48, // 768px
-  laptop: 62, // 992px
-  desktop: 75, // 1200px
-  widescreen: 90, // 1440px
-  ultrawide: 100, // 1600px
-  retina: 150 // 2400px
-);
+$phone: 20em; // 320px
+$phablet: 30em; // 480px
+$tablet: 48em; // 768px
+$laptop: 62em; // 992px
+$desktop: 75em; // 1200px
+$widescreen: 90em; // 1440px
+$ultrawide: 100em; // 1600px
+$retina: 150em; // 2400px

@@ -1,16 +1,50 @@
 // Core Layout Styles
+
+*::-webkit-scrollbar {
+  width: $space-split;
+}
+
+*::-webkit-scrollbar-track {
+  background: $dove;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: $loblolly;
+}
+
+*::selection {
+  background: $loblolly;
+  text-shadow: none;
+}
+
 .layout__wrapper {
-  position: relative;
+  min-height: 100vh;
   display: flex;
-	min-height: 100vh;
+  position: relative;
   flex-direction: column;
+
+  .header,
+  .main,
+  .view,
+  .footer {
+    flex-flow: row wrap;
+  }
+
+  .header,
+  .view,
+  .footer, {
+    width: 100%;
+    flex: $fill-base;
+  }
 
   .header {
     z-index: 4;
+    align-self: flex-start;
   }
 
   .sidebar {
     z-index: 3;
+    align-self: stretch;
   }
 
   .main {
@@ -20,13 +54,12 @@
 
   .footer {
     z-index: 1;
+    align-self: flex-end;
   }
 
   > .container {
-    display: flex;
-    width: 100%;
+    min-height: 100vh;
     max-width: none;
-	  min-height: 100vh;
     flex-direction: column;
   }
 }

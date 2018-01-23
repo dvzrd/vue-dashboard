@@ -9,6 +9,7 @@ const fetchConfig = new Promise(resolve => {
       sidebarExtend: false, // change default state of sidebar menu
       notifications: false, // hide or show notifications in topbar
       breadcrumbs: false, // hide or show breadcrumbs in view
+      footer: true, // hide or show dashboard footer
       logo: '/static/logo.png', // dashboard logo image url
       avatar: '/static/avatar.png', // user avatar image url
       user: 'Art Vandelay', // name of logged in user
