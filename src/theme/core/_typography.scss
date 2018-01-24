@@ -23,7 +23,7 @@ h4, h5, h6,
 thead, th {
   position: relative;
   flex: $fill-base;
-  margin: $gutter-apex;
+  margin: $gutter-base;
   color: $bond-accent;
   font-family: $font-apex;
   font-weight: $weight-heavy;
@@ -36,10 +36,6 @@ thead, th {
     line-height: $height-core;
     margin-top: $space-press;
   }
-}
-
-h4, h5, h6 {
-  margin: $gutter-plain;
 }
 
 h1 {
@@ -93,7 +89,7 @@ p, figure {
 }
 
 b, strong, figcaption {
-  margin: $gutter-base;
+  margin: 0;
   font-weight: $weight-core;
 }
 

@@ -1,0 +1,181 @@
+// Core Button Styles
+
+.button {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  line-height: $height-core;
+  margin: $gutter-base;
+  padding: $gutter-action;
+  background: $athens;
+  color: $smoke;
+  transition: $shift-base;
+
+  &:hover {
+    background: $loblolly;
+    color: $smoke;
+  }
+
+  &:active {
+    background: $bali;
+    color: $smoke;
+  }
+
+  // Color Palette Buttons
+
+  &.button--brand {
+    background: $brand-base;
+    color: $light;
+
+    &:hover {
+      background: $brand-accent;
+      color: $light;
+    }
+
+    &:active {
+      background: $brand-deepen;
+      color: $light;
+    }
+  }
+
+  &.button--bond {
+    background: $bond-deepen;
+    color: $light;
+
+    &:hover {
+      background: $bond-accent;
+      color: $light;
+    }
+
+    &:active {
+      background: $bond-apex;
+      color: $light;
+    }
+  }
+
+  &.button--ground {
+    background: $ground-core;
+    color: $bond-apex;
+
+    &:hover {
+      background: $cadet;
+      color: $bond-apex;
+    }
+
+    &:active {
+      background: $bond-core;
+      color: $bond-apex;
+    }
+  }
+
+  &.button--boost {
+    background: $boost-base;
+    color: $light;
+
+    &:hover {
+      background: $boost-core;
+      color: $light;
+    }
+
+    &:active {
+      background: $boost-apex;
+      color: $light;
+    }
+  }
+
+  &.button--info {
+    background: $serve-info;
+    color: $light;
+
+    &:hover {
+      background: darken($serve-info, 5%);
+      color: $light;
+    }
+
+    &:active {
+      background: darken($serve-info, 10%);
+      color: $light;
+    }
+  }
+
+  &.button--pass {
+    background: $serve-pass;
+    color: $light;
+
+    &:hover {
+      background: darken($serve-pass, 5%);
+      color: $light;
+    }
+
+    &:active {
+      background: darken($serve-pass, 10%);
+      color: $light;
+    }
+  }
+
+  &.button--warn {
+    background: $serve-warn;
+    color: $light;
+
+    &:hover {
+      background: darken($serve-warn, 5%);
+      color: $light;
+    }
+
+    &:active {
+      background: darken($serve-warn, 10%);
+      color: $light;
+    }
+  }
+
+  &.button--fail {
+    background: $serve-fail;
+    color: $light;
+
+    &:hover {
+      background: darken($serve-fail, 5%);
+      color: $light;
+    }
+
+    &:active {
+      background: darken($serve-fail, 10%);
+      color: $light;
+    }
+  }
+
+  // Style Pattern Buttons
+
+  &.button--glass {
+    background: transparent !important;
+  }
+
+  &.button--shade {
+    box-shadow: $shadow-base $night;
+  }
+
+  &.button--spread {
+    display: block;
+    width: 100%;
+  }
+
+  &.button--icon {
+    margin: 0;
+    padding: $space-press;
+  }
+
+  &.button--icon-label {
+
+    .icon {
+      margin-right: $space-frame;
+    }
+  }
+
+  &.button--label-icon {
+
+    .icon {
+      margin-left: $space-frame;
+    }
+  }
+}

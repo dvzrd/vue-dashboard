@@ -21,6 +21,7 @@
   @import '../theme/content';
 
   .heading__hero {
+    margin: 0;
     font-size: $size-hero;
   }
 </style>

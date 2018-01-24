@@ -3,7 +3,6 @@
   display: flex;
   flex-flow: row wrap;
   flex: $fill-base;
-  max-width: $container-base;
   padding: $space-base;
   margin: 0 auto;
 
@@ -12,5 +11,9 @@
     margin: 0;
     padding: 0;
     background: $canvas-base;
+  }
+
+  > * {
+    flex: $fill-base;
   }
 }

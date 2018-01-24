@@ -21,6 +21,7 @@ $space-convex: 1.25em;
 $space-annex: 1.5em;
 $space-lead: 1.75em;
 $space-clear: 2em;
+$space-spread: 2.25em;
 $space-mast: 2.5em;
 $space-core: 3em;
 $space-hill: 3.5em;
@@ -54,9 +55,10 @@ $gutter-action: 0.75em 1.75em;
 $gutter-fit: 0.5em 0.75em;
 $gutter-label: 0.25em 0.5em;
 $gutter-note: 0.5em 0;
+$gutter-gap: 0 0.75em;
 
 // Shadow - variables for box-shadow
-$shadow-base: 0.15rem 0.15rem 0.5rem 0;
+$shadow-base: 0.05rem 0.05rem 0.15rem 0;
 $shadow-glow: 0 0 0.1rem 0.05rem;
 $shadow-blur: 0 0 0.25rem 0.15rem;
 $shadow-strip: 0 0 0 0.5rem;

@@ -12,7 +12,7 @@
         'expand': sidebarExtend
       }"
     >
-      <ul class="list list--menu sidebar__menu--list">
+      <ul class="list list--menu sidebar__menu--list" id="navigation">
         <li
           class="item item--stack sidebar__menu--item"
           v-on:click="handleCloseDropdown"
@@ -119,6 +119,36 @@
           </router-link>
         </li>
       </ul>
+      <ul class="list list--menu sidebar__menu--list" id="support">
+        <li
+          class="item item--stack sidebar__menu--item"
+          v-on:click="handleCloseDropdown"
+        >
+          <button
+            type="button"
+            class="button button--spread button--info button--icon-label sidebar__menu--button"
+          >
+            <i class="icon fa fa-life-ring" aria-hidden="true"></i>
+            <span class="label label--menu sidebar__menu--label">
+              Get Help
+            </span>
+          </button>
+        </li>
+        <li
+          class="item item--stack sidebar__menu--item"
+          v-on:click="handleCloseDropdown"
+        >
+          <button
+            type="button"
+            class="button button--spread button--warn button--icon-label sidebar__menu--button"
+          >
+            <i class="icon fa fa-bug" aria-hidden="true"></i>
+            <span class="label label--menu sidebar__menu--label">
+              Report Issue
+            </span>
+          </button>
+        </li>
+      </ul>
     </nav>
   </aside>
 </template>
@@ -156,6 +186,7 @@
 
   // dashboard sidebar
   .dashboard__sidebar {
+    overflow: hidden;
     position: fixed;
     display: flex;
     align-self: stretch;
@@ -168,7 +199,7 @@
     left: 0;
     width: 100%;
     height: $space-mast;
-    box-shadow: $shadow-glow $smoke;
+    box-shadow: $shadow-glow $night;
     background: $bond-core;
     transition: $shift-base;
 
@@ -176,7 +207,7 @@
       align-items: flex-start;
       height: 100vh;
       width: $space-core;
-      box-shadow: $shadow-glow $smoke inset;
+      box-shadow: $shadow-drop $night inset;
     }
 
     // dashboard sidebar expand
@@ -191,16 +222,17 @@
 
     // dashboard sidebar menu
     .dashboard__sidebar--menu {
+      display: flex;
+      flex-flow: row wrap;
       width: 100%;
-
-      @media only screen and (min-width: $tablet) {
-        margin-top: $space-core;
-      }
+      height: 100%;
+      margin: 0;
 
       .sidebar__menu--list {
-        display: flex;
         justify-content: center;
         list-style: none;
+        display: flex;
+        flex: $fill-base;
         margin: 0;
         padding: 0;
 
@@ -216,6 +248,24 @@
             flex: $fill-base;
           }
         }
+
+        &#navigation {
+          align-items: flex-start;
+          align-content: flex-start;
+
+          @media only screen and (min-width: $tablet) {
+            margin-top: $space-core;
+          }
+        }
+
+        &#support {
+          display: none;
+          align-self: flex-end;
+
+          @media only screen and (min-width: $tablet) {
+            display: flex;
+          }
+        }
       }
 
       .sidebar__menu--link {
@@ -226,20 +276,6 @@
         flex: $fill-base;
         padding: $space-frame;
         font-size: $space-trim;
-
-        .icon {
-          color: $brand-base;
-          font-size: $size-brief;
-        }
-
-        .sidebar__menu--label {
-          opacity: 0;
-          position: absolute;
-          visibility: hidden;
-          transition: none;
-          margin-left: $space-mast;
-          color: $light;
-        }
 
         &.active {
           background: $lynch;
@@ -258,9 +294,36 @@
         }
       }
 
+      .sidebar__menu--button {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        font-size: $space-trim;
+        padding: $space-frame;
+        margin: 0;
+
+        .icon {
+          color: $light;
+        }
+      }
+
+      .icon {
+        margin: 0;
+        color: $brand-base;
+        font-size: $size-brief;
+      }
+
+      .sidebar__menu--label {
+        opacity: 0;
+        position: absolute;
+        visibility: hidden;
+        transition: none;
+        margin-left: $space-mast;
+        color: $light;
+      }
+
       // dashboard sidebar menu expand
       &.expand {
-        margin-top: $space-core;
 
         .sidebar__menu--list {
           flex-flow: row wrap;
@@ -268,21 +331,35 @@
           .sidebar__menu--item {
             flex: $fill-base;
           }
+
+          &#navigation {
+            margin-top: $space-core;
+          }
+
+          &#support {
+            display: flex;
+          }
         }
 
         .sidebar__menu--link {
           justify-content: left;
+        }
 
-          .icon {
-            position: absolute;
-          }
+        .sidebar__menu--button {
+          justify-content: left;
+        }
 
-          .sidebar__menu--label {
-            opacity: 1;
-            position: relative;
-            visibility: visible;
-            transition: $shift-base;
-          }
+        .icon {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .sidebar__menu--label {
+          opacity: 1;
+          position: relative;
+          visibility: visible;
+          transition: $shift-base;
         }
       }
     }

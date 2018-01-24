@@ -140,7 +140,7 @@
           >
             <button
               type="button"
-              class="button button--icon-label dropdown__menu--button"
+              class="button button--spread button--fail button--icon-label dropdown__menu--button"
             >
               <i class="icon fa fa-sign-out" aria-hidden="true"></i>
               Logout
@@ -228,11 +228,11 @@
         align-items: center;
 
         .icon {
+          opacity: 0;
           display: none;
           visibility: hidden;
-          opacity: 0;
-          margin: 0 0.75em;
-          margin-left: -1.25em;
+          margin: $gutter-gap;
+          margin-left: -$space-convex;
           transition: $shift-base;
 
           @media only screen and (min-width: $tablet) {
@@ -259,9 +259,9 @@
         &:hover {
 
           .icon {
-            opacity: 1;
-            margin-left: 0.5em;
             visibility: visible;
+            opacity: 1;
+            margin-left: $space-split;
           }
 
           .topbar__logo--heading {
@@ -306,13 +306,13 @@
       .topbar__dropdown--menu {
         visibility: hidden;
         opacity: 0;
-        top: 3em;
         right: -100%;
+        top: $space-core;
         position: fixed;
+        display: flex;
         text-align: right;
         align-items: right;
         align-content: right;
-        display: flex;
         flex-flow: row wrap;
         flex: $fill-base;
         max-width: $frame-bar;
@@ -328,38 +328,38 @@
 
         .dropdown__menu--title {
           margin: 0;
-          padding: 0.75em;
-          background: #a4b7c1;
-          color: #606060;
-          font-size: 0.9em;
+          padding: $space-frame;
+          background: $cadet;
+          color: $bond-core;
+          font-size: $space-trim;
 
           .icon {
-            left: 0.75em;
+            left: $space-frame;
           }
         }
 
         .dropdown__menu--list {
+          list-style: none;
+          width: 100%;
           margin: 0;
           padding: 0;
-          width: 100%;
-          list-style: none;
 
           .dropdown__menu--item {
             margin: 0;
-            border-bottom: 0.05em solid #a4b7c1;
-            border-right: 0.05em solid #a4b7c1;
+            border-bottom: $border-lead $cadet;
+            border-right: $border-lead $cadet;
           }
         }
 
         .dropdown__menu--link {
           display: block;
-          padding: 0.5em;
-          padding-right: 2.25em;
+          padding: $space-split;
+          padding-right: $space-spread;
           color: $lynch;
-          font-size: 0.75em;
+          font-size: $size-legal;
 
           .icon {
-            right: 0.75em;
+            right: $space-frame;
           }
 
           &:hover {
@@ -369,20 +369,13 @@
         }
 
         .dropdown__menu--button {
-          position: relative;
-          display: block;
-          width: 100%;
-          padding: 0.75em;
-          border: 0;
-          background: $serve-fail;
-          color: $light;
-          font-size: 0.9em;
-          font-weight: 700;
           text-align: right;
-          transition: $shift-base;
+          margin: 0;
+          padding: $space-frame;
+          font-size: $space-trim;
 
           .icon {
-            left: 0.75em;
+            left: $space-frame;
             transition: $shift-base;
           }
         }
