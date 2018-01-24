@@ -22,7 +22,7 @@
   @import '../../../theme/content';
 
   .footer__dashboard {
-    padding: $space-split $space-base;
+    padding: $space-split;
 
     .footer__dashboard--copyright {
       margin: 0;

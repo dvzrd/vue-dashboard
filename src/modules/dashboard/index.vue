@@ -25,11 +25,11 @@
 <script>
   import { mapGetters } from 'vuex';
   import store from './_store';
-  import DashboardTopbar from './_components/dashboard_topbar';
-  import DashboardSidebar from './_components/dashboard_sidebar';
-  import DashboardMain from './_components/dashboard_main';
+  import DashboardTopbar from './_components/dashboard__topbar';
+  import DashboardSidebar from './_components/dashboard__sidebar';
+  import DashboardMain from './_components/dashboard__main';
   export default {
-    name: 'module-dashboard',
+    name: 'dashboard-module',
     components: {
       DashboardTopbar,
       DashboardSidebar,
@@ -44,6 +44,7 @@
     },
     created() {
       this.$store.registerModule('$_dashboard', store);
+      console.log(this.$store)
     },
     mounted() {
       this.$store.dispatch('$_dashboard/getConfig');

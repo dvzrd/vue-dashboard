@@ -1,4 +1,6 @@
-// Configure dashboard - options to configure dashboard settings and layout
+/**
+ * fetchConfig - fetch object used to configure dashboard module display settings
+ */
 const fetchConfig = new Promise(resolve => {
   setTimeout(() => {
     resolve({
@@ -18,6 +20,7 @@ const fetchConfig = new Promise(resolve => {
   }, 250);
 });
 
+// export available dashboard api calls
 export default {
   fetchConfig
 };

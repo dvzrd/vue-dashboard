@@ -1,7 +1,7 @@
 <template>
   <main
     v-bind:class="{
-      'main main__dashboard': true,
+      'main dashboard__main': true,
       'reduce': sidebarExtend
     }"
   >
@@ -17,8 +17,8 @@
 </template>
 
 <script>
-  import DashboardBreadcrumbs from './dashboard_breadcrumbs';
-  import DashboardFooter from './dashboard_footer';
+  import DashboardBreadcrumbs from './dashboard__breadcrumbs';
+  import DashboardFooter from './dashboard__footer';
   export default {
     name: 'dashboard-main',
     props: {
@@ -48,7 +48,7 @@
   // import design composition variables
   @import '../../../theme/composition';
 
-  .main__dashboard {
+  .dashboard__main {
     flex: 5;
     display: flex;
     align-self: stretch;

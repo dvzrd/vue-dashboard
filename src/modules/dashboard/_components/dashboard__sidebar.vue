@@ -308,7 +308,7 @@
 
       .icon {
         margin: 0;
-        color: $brand-base;
+        color: $brand-accent;
         font-size: $size-brief;
       }
 

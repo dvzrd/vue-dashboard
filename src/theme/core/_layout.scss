@@ -17,7 +17,7 @@
   text-shadow: none;
 }
 
-.layout__wrapper {
+.layout {
   min-height: 100vh;
   display: flex;
   position: relative;
@@ -65,21 +65,16 @@
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
+    background: $canvas-base;
   }
 
   .container {
+    padding: 0;
+    margin: 0;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
     flex: $fill-base;
-    padding: $space-base;
-    margin: 0 auto;
-
-    &.dashboard__container {
-      margin: 0;
-      padding: 0;
-      background: $canvas-base;
-    }
 
     > * {
       flex: $fill-base;
@@ -96,8 +91,11 @@
     align-self: flex-end;
   }
 
-  > .container {
-    min-height: 100vh;
-    flex-direction: column;
+  &.dashboard__layout {
+
+    > .container {
+      min-height: 100vh;
+      flex-direction: column;
+    }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper layout__wrapper" id="layout">
+  <div class="layout dashboard__layout" id="layout">
     <DashboardModule />
   </div>
 </template>
@@ -20,6 +20,6 @@
 </style>
 
 <style lang="scss">
-  // Import theme styles for app
+  // Import global theme styles for app
   @import './theme/styles';
 </style>

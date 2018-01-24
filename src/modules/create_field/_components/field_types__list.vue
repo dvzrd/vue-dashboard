@@ -1,5 +1,7 @@
 <template>
-  <ul class="list field-types__list">
+  <ul
+    id="field-types-list"
+    class="list toolbar__list field-types__list">
     <FieldTypesItem
       v-for="fieldType in fieldTypes"
       :key="fieldType.id"
@@ -9,13 +11,13 @@
       class="item field-types__spinner"
       v-if="!fieldTypes || fieldTypes.length === 0"
     >
-      Fetching Field Types...
+      Fetching available field types...
     </li>
   </ul>
 </template>
 
 <script>
-  import FieldTypesItem from './field_types_item';
+  import FieldTypesItem from './field_types__item';
   export default {
     name: 'field-types-list',
     components: {
@@ -30,12 +32,5 @@
 </script>
 
 <style lang="scss" scoped>
-  .table-row__fallback {
-    td {
-      text-align: center;
-    }
-  }
-  table {
-    border: 1px solid #999;
-  }
+  // Styles scoped for field-types-list
 </style>
