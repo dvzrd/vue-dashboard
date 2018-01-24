@@ -52,6 +52,45 @@
     z-index: 2;
   }
 
+  .view {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+  }
+
+  .wrapper {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    flex: $fill-base;
+    padding: $space-base;
+    margin: 0 auto;
+
+    &.dashboard__container {
+      margin: 0;
+      padding: 0;
+      background: $canvas-base;
+    }
+
+    > * {
+      flex: $fill-base;
+    }
+  }
+
+  .frame {
+    flex: 1;
+    display: flex;
+  }
+
   .footer {
     z-index: 1;
     align-self: flex-end;

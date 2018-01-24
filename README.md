@@ -82,21 +82,14 @@ This is a high level outline of the file structure, for a more detailed look int
 |    ├── theme                                  # main theme files to unify design for app
 |    |    ├── core                              # global core theme styles
 |    |    |    ├── _animate.scss                # theme keyframes for animations
-|    |    |    ├── _container.scss              # theme styles for elements used to contain children
-|    |    |    ├── _context.scss                # theme styles for elements used to display text
-|    |    |    ├── _frame.scss                  # theme styles for elements used to frame columns
-|    |    |    ├── _heading.scss                # theme styles for elements used to display heading
+|    |    |    ├── _button.scss                 # theme styles for button components
 |    |    |    ├── _layout.scss                 # theme styles for layout wrapper
-|    |    |    ├── _listing.scss                # theme styles for elements used to list data
-|    |    |    ├── _media.scss                  # theme styles for media elements
-|    |    |    ├── _normalize.scss              # normalize styles for theme
+|    |    |    ├── _normalize.scss              # normalize global document styles for app
 |    |    |    ├── _print.scss                  # theme print styles
-|    |    |    ├── _typography.scss             # theme typography
-|    |    |    ├── _view.scss                   # theme styles for view
-|    |    |    ├── _wrapper.scss                # theme styles for wrapper elements
+|    |    |    ├── _typography.scss             # theme typography styles
 |    |    |    └── core.scss                    # import core files for export
-|    |    ├── fonts                             # local fonts to import into theme typography
-|    |    ├── vendor                            # vendor stylesheets and variables
+|    |    ├── fonts                             # source fonts to import into theme typography
+|    |    ├── vendor                            # source vendor stylesheets and variables
 |    |    ├── _patches.scss                     # global style overrides
 |    |    ├── _variables.scss                   # global variable overrides
 |    |    ├── composition.scss                  # design compositin variables for theme

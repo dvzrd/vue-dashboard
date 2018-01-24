@@ -18,6 +18,20 @@ body, p, li, td, span {
   color: $bond-base;
 }
 
+// Ruler
+
+hr {
+  display: block;
+  outline: none;
+  padding: 0;
+  border: 0;
+  border-top: $border-base $ground-apex;
+  height: $space-dash;
+  margin: $gutter-fluid;
+}
+
+// Heading
+
 h1, h2, h3,
 h4, h5, h6,
 thead, th {
@@ -62,26 +76,7 @@ h6 {
   font-size: $size-mark;
 }
 
-hr {
-  display: block;
-  outline: none;
-  padding: 0;
-  border: 0;
-  border-top: $border-base $ground-apex;
-  height: $space-dash;
-  margin: $gutter-fluid;
-}
-
-img,
-video {
-  width: 100%;
-  margin: 0 auto;
-}
-
-pre,
-core {
-  font-family: $font-code;
-}
+// Context
 
 p, figure {
   flex: $fill-base;
@@ -93,9 +88,30 @@ b, strong, figcaption {
   font-weight: $weight-core;
 }
 
-sup, sub, code {
+blockquote {
+  font-style: italic;
+  font-weight: $weight-core;
+  margin: $gutter-spread;
+}
+
+sup, sub {
   font-weight: $weight-heavy;
 }
+
+pre, code {
+  font-family: $font-code;
+  font-weight: $weight-heavy;
+}
+
+.context {
+  margin-bottom: $space-base;
+
+  &.context--legal {
+    font-size: $size-legal
+  }
+}
+
+// Link
 
 a {
   cursor: pointer;
@@ -120,11 +136,7 @@ a {
   }
 }
 
-blockquote {
-  font-style: italic;
-  font-weight: $weight-core;
-  margin: $gutter-spread;
-}
+// List
 
 ol, ul {
   margin: $gutter-chain;
@@ -134,4 +146,27 @@ ol, ul {
 
 li {
   margin-bottom: $space-split;
+}
+
+.list {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+// Media
+
+img,
+video {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.media {
+  margin: 0;
+  width: 100%;
+}
+
+.icon {
+  transition: $shift-base;
 }

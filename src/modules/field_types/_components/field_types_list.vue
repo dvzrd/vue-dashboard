@@ -1,27 +1,25 @@
 <template>
-  <table>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-    <FieldTypeItem
+  <ul class="list field-types__list">
+    <FieldTypesItem
       v-for="fieldType in fieldTypes"
       :key="fieldType.id"
       :fieldType="fieldType"
     />
-    <tr class="table-row__fallback" v-if="!fieldTypes || fieldTypes.length === 0">
-      <td colspan="3">No Field Types Given</td>
-    </tr>
-  </table>
+    <li
+      class="item field-types__spinner"
+      v-if="!fieldTypes || fieldTypes.length === 0"
+    >
+      Fetching Field Types...
+    </li>
+  </ul>
 </template>
 
 <script>
-  import FieldTypeItem from './field_type_item';
+  import FieldTypesItem from './field_types_item';
   export default {
     name: 'field-types-list',
     components: {
-      FieldTypeItem
+      FieldTypesItem
     },
     props: {
       fieldTypes: {

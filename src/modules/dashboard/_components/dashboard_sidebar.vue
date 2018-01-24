@@ -230,7 +230,6 @@
 
       .sidebar__menu--list {
         justify-content: center;
-        list-style: none;
         display: flex;
         flex: $fill-base;
         margin: 0;

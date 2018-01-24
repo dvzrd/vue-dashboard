@@ -339,7 +339,6 @@
         }
 
         .dropdown__menu--list {
-          list-style: none;
           width: 100%;
           margin: 0;
           padding: 0;

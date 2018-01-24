@@ -17,11 +17,27 @@
 </script>
 
 <style lang="scss" scoped>
+  // import color palette variables
+  @import '../theme/palette';
+  // import design composition variables
+  @import '../theme/composition';
   // import design content variables
   @import '../theme/content';
 
-  .heading__hero {
-    margin: 0;
-    font-size: $size-hero;
+  .dashboard__hero {
+    box-shadow: $shadow-glow $lynch;
+    background: $bali;
+
+    .dashboard__hero--container {
+      padding: $gutter-bar;
+
+      .heading__hero {
+        margin: 0;
+        color: $light;
+        font-size: $size-base;
+        text-align: left;
+        text-transform: uppercase;
+      }
+    }
   }
 </style>
