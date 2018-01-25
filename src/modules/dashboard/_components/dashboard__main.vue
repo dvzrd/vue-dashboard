@@ -1,5 +1,6 @@
 <template>
   <main
+    id="main"
     v-bind:class="{
       'main dashboard__main': true,
       'reduce': sidebarExtend

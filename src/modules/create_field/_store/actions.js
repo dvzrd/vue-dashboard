@@ -30,8 +30,24 @@ const getFieldTypes = context =>
       console.error(error);
     });
 
+/**
+ * getFieldGroups - commit field-groups data fetched from api
+ *
+ * @param {Object} context - methods/params needed to complete action
+ */
+const getFieldGroups = context =>
+  api.fetchFieldGroups
+    .then(response => {
+      context.commit('FIELD_GROUPS_UPDATED', response);
+    })
+    .catch(error => {
+      /* eslint-disable-next-line */
+      console.error(error);
+    });
+
 // export available create-field actions for container
 export default {
   getConfig,
-  getFieldTypes
+  getFieldTypes,
+  getFieldGroups
 };

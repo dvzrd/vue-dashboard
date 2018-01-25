@@ -18,8 +18,19 @@ const FIELD_TYPES_UPDATED = (state, fieldTypes) => {
   state.fieldTypes = fieldTypes;
 };
 
+/**
+ * FIELD_GROUPS_UPDATED - object type for mutating create-field module fieldGroups state
+ *
+ * @param {Object} state - stored module state object
+ * @param {Array} fieldGroups - module fieldGroups data mapped to state
+ */
+const FIELD_GROUPS_UPDATED = (state, fieldGroups) => {
+  state.fieldGroups = fieldGroups;
+};
+
 // export available create-field module state mutations
 export default {
   CREATE_FIELD_UPDATED,
-  FIELD_TYPES_UPDATED
+  FIELD_TYPES_UPDATED,
+  FIELD_GROUPS_UPDATED
 };

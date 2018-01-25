@@ -5,7 +5,8 @@ import mutations from './mutations';
 // Configure create-field module default state
 const state = {
   config: {},
-  fieldTypes: []
+  fieldTypes: [],
+  fieldGroups: []
 };
 
 // Export available create-field module store features

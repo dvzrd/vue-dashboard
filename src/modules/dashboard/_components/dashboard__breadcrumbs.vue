@@ -1,5 +1,7 @@
 <template>
-  <nav class="menu menu__breadcrumbs dashboard__breadcrumbs--menu">
+  <nav
+    id="breadcrumbs"
+    class="menu menu__breadcrumbs dashboard__breadcrumbs--menu">
     <p>Dashboard Breadcrumbs Menu</p>
   </nav>
 </template>

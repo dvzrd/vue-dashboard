@@ -1,9 +1,12 @@
 <template>
-  <header class="header hero dashboard__hero">
-    <figure class="container dashboard__hero--container">
-      <figcaption class="caption caption__hero">
-        <h1 class="heading heading__hero">
+  <header class="header header--hero dashboard__hero">
+    <figure class="container container--hero dashboard__hero--container">
+      <figcaption class="caption caption--hero dashboard__hero--caption">
+        <h1 class="heading heading--hero dashboard__hero--heading">
           Commercial Property
+          <small class="meta meta--hero dashboard__hero--meta">
+            Add Field
+          </small>
         </h1>
       </figcaption>
     </figure>
@@ -31,12 +34,20 @@
     .dashboard__hero--container {
       padding: $gutter-bar;
 
-      .heading__hero {
+      .dashboard__hero--heading {
         margin: 0;
         color: $light;
         font-size: $size-base;
         text-align: left;
         text-transform: uppercase;
+
+        .dashboard__hero--meta {
+          display: inline-block;
+          margin: 0;
+          margin-left: $space-split;
+          color: $loblolly;
+          font-size: 90%;
+        }
       }
     }
   }

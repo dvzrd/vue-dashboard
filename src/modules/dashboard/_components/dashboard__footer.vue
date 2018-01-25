@@ -1,5 +1,7 @@
 <template>
-  <footer class="footer footer__dashboard">
+  <footer
+    id="footer"
+    class="footer footer__dashboard">
     <p class="context context--legal footer__dashboard--copyright" v-text="copyright"></p>
   </footer>
 </template>

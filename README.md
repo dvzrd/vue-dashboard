@@ -109,6 +109,69 @@ This is a high level outline of the file structure, for a more detailed look int
 └── package.json                                # package info for app
 ```
 
+## Development Notes
+
+### Feature Goals
+
+* Create Field Module 
+  * Field Types Container
+    * ~~List field types data fetched from module api~~
+    * Filter fields by type using value of `type` key
+    * Store selected type `id` to module state
+  * Field Details Container
+    * Connect Form to other containers
+    * Display Label input creates value for Reference Name on blur
+    * Custom Validation Field
+      * Store input value to store if valid regex
+  * Field Groups Container
+    * List field groups data fetched from module api
+    * Store selected group `id` to module state
+    * Action to create new group
+      * create new object to field groups array using data from other containers
+  * Form Actions
+    * Save Changes - store all module data to state
+    * Cancel Changes - reset store to default state
+    * Delete Input - remove this input from store
+
+### Known Issues
+
+* Passing config prop to containers in module logs undefined in console but the passed data still renders. This is most likely an issue with the time out that simulates the api.
+  * Need to add async middleware layer to pass props to module containers - look for a `thunk` library for `vuex`.
+  * This can be resolved by refactoring the structure of the module - read Optimzation Concepts below for more details.
+  * content hardcoded for this example since this issue is low priority.
+
+### Feature Concepts
+
+#### Layout Provider
+
+Create a layout provider to serve different layouts - in some cases views don't need to live in the dashboard.
+
+* Look into `vue-router` and `vuex` to handle this on the client
+* Look into using `webpack` to handle this on the server
+
+#### Theme Provider
+
+Create a theme provider to inject configured theme styles into the layout
+
+* Look into `styled-componets` to see how this was accomplished with react.
+* Look into `vue-styled-components` to resolve open issue regarding [ThemeProvider](https://github.com/styled-components/vue-styled-components/issues/26)
+
+### Optimization Concepts
+
+#### Refactor Dashboard Module
+
+Find a way to make dashboard module a global wrapper that can control all the smaller modules, like `create-field`.
+
+* Look into `vue` and `vuex` architecture solutions if any were already suggested, specifically dealing with dashboards or large applications.
+* Look into creating modular global components that can be used by smaller modules - in this case, modules share header, sidebar, main section, and footer. Find a way to recycle these components and only extend them when necessary for each relative module.
+
+#### Refactor Create Field Module
+
+Refactor `create-field` to function as a wrapper to connect containers that share data to each other. Break up containers into seperate modules that have their own api and store.
+
+* Look into `vuex` to connect components with props to share information between store.
+* Create a global store - this can be the refactored dashboard module. This can be called `core` since the namespace of the project is already dashboard.
+
 ## Documentation
 
 ### Design System and Theme Provider

@@ -10,7 +10,9 @@
         </h3>
       </figcaption>
       <FieldTypesFilter />
-      <FieldTypesList :fieldTypes="fieldTypes" />
+      <FieldTypesList
+        :fieldTypes="fieldTypes"
+      />
     </figure>
   </aside>
 </template>
@@ -25,6 +27,12 @@
       FieldTypesList
     },
     props: {
+      id: {
+        type: String
+      },
+      heading: {
+        type: String
+      },
       fieldTypes: {
         type: Array
       }

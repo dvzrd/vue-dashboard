@@ -75,10 +75,6 @@
     display: flex;
     flex-flow: row wrap;
     flex: $fill-base;
-
-    > * {
-      flex: $fill-base;
-    }
   }
 
   .frame {

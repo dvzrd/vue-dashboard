@@ -44,7 +44,6 @@
     },
     created() {
       this.$store.registerModule('$_dashboard', store);
-      console.log(this.$store)
     },
     mounted() {
       this.$store.dispatch('$_dashboard/getConfig');
