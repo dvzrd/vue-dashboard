@@ -12,7 +12,7 @@ const fetchConfig = new Promise(resolve => {
       },
       toolbar: {
         id: 'field-types', // id of toolbar for create-field module
-        heading: 'Field Types', // heading of toolbar in create-field module
+        name: 'Field Types', // heading of toolbar in create-field module
         filter: {
           icon: true, // show filter icon
           placeholder: 'Filter by field type' // configure filter placeholder
@@ -20,11 +20,11 @@ const fetchConfig = new Promise(resolve => {
       },
       main: {
         id: 'field-details', // id of main for create-field module
-        heading: 'Field Details' // heading of main content for module
+        name: 'Field Details' // heading of main content for module
       },
       sidebar: {
         id: 'field-groups', // id of sidebar for create-field module
-        heading: 'Field Groups', // heading of sidebar content in create-field module
+        name: 'Field Groups', // heading of sidebar content in create-field module
         desc: 'Choose a group for this field', // description of sidebar in create-field module
         cta: 'Create New Group' // label for call to action in sidebar
       },
@@ -44,26 +44,108 @@ const fetchFieldTypes = new Promise(resolve => {
       {
         id: 'field-type-text',
         type: 'text',
+        icon: 'fa-header',
         desc: 'String of text',
         default: 'Free-form text input',
       },
       {
         id: 'field-type-date',
         type: 'date',
+        icon: 'fa-calendar',
         desc: 'Standard ISO format date',
         default: 'Datepicker, with configurable format',
       },
       {
+        id: 'field-type-vin',
+        type: 'vin',
+        icon: 'fa-car',
+        desc: 'Vehicle Identification Number',
+        default: 'Free form text input',
+      },
+      {
         id: 'field-type-number',
         type: 'number',
+        icon: 'fa-sort',
         desc: 'String of number(s)',
         default: 'Quantity, limit or ID inputs',
       },
       {
         id: 'field-type-currency',
         type: 'currency',
+        icon: 'fa-money',
         desc: 'Standard currency format options',
         default: 'Expenses or Estimated Value inputs',
+      }
+    ]);
+  }, 500);
+});
+
+/**
+ * fetchFieldDetails - fetch array used to render field-details data
+ */
+const fetchFieldDetails = new Promise(resolve => {
+  setTimeout(() => {
+    resolve([
+      {
+        id: 'field-details-label',
+        name: 'display-label',
+        label: 'Display Label',
+        legend: 'For display purposes, spaces allowed',
+        required: true,
+        error: 'Please provide a display label for the field'
+      },
+      {
+        id: 'field-details-ref',
+        name: 'reference-name',
+        label: 'Reference Name',
+        legend: 'Used to reference in calculations, no spaces allowed',
+        required: true,
+        error: 'Please provide a reference name for the field'
+      },
+      {
+        id: 'field-details-value',
+        name: 'default-value',
+        label: 'Default Value'
+      },
+      {
+        id: 'field-details-regex',
+        name: 'custom-validation',
+        label: 'Custom Validation',
+        legend: 'Any regex pattern can be used for custom validation'
+      }
+    ]);
+  }, 500);
+});
+
+/**
+ * fetchFieldTags - fetch array used to render field-tags data
+ */
+const fetchFieldTags = new Promise(resolve => {
+  setTimeout(() => {
+    resolve([
+      {
+        id: 'field-tag-vin',
+        name: 'VIN',
+        groups: [
+          'Vinmaster',
+          'ISO'
+        ]
+      },
+      {
+        id: 'field-tag-date',
+        name: 'Date',
+        groups: [
+          'Calendar',
+          'Timepicker'
+        ]
+      },
+      {
+        id: 'field-tag-some-tag',
+        name: 'Some Tag',
+        groups: [
+          'Some Tag Group',
+          'Tag 3'
+        ]
       }
     ]);
   }, 500);
@@ -81,12 +163,14 @@ const fetchFieldGroups = new Promise(resolve => {
         inputCount: 7
       }
     ]);
-  }, 250);
+  }, 500);
 });
 
 // export available create-field api calls
 export default {
   fetchConfig,
   fetchFieldTypes,
+  fetchFieldDetails,
+  fetchFieldTags,
   fetchFieldGroups
 };

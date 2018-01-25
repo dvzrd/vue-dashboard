@@ -31,6 +31,36 @@ const getFieldTypes = context =>
     });
 
 /**
+ * getFieldDetails - commit field-details data fetched from api
+ *
+ * @param {Object} context - methods/params needed to complete action
+ */
+const getFieldDetails = context =>
+  api.fetchFieldDetails
+    .then(response => {
+      context.commit('FIELD_DETAILS_UPDATED', response);
+    })
+    .catch(error => {
+      /* eslint-disable-next-line */
+      console.error(error);
+    });
+
+/**
+ * getFieldTags - commit field-tags data fetched from api
+ *
+ * @param {Object} context - methods/params needed to complete action
+ */
+const getFieldTags = context =>
+  api.fetchFieldTags
+    .then(response => {
+      context.commit('FIELD_TAGS_UPDATED', response);
+    })
+    .catch(error => {
+      /* eslint-disable-next-line */
+      console.error(error);
+    });
+
+/**
  * getFieldGroups - commit field-groups data fetched from api
  *
  * @param {Object} context - methods/params needed to complete action
@@ -49,5 +79,7 @@ const getFieldGroups = context =>
 export default {
   getConfig,
   getFieldTypes,
+  getFieldDetails,
+  getFieldTags,
   getFieldGroups
 };

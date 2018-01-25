@@ -19,6 +19,26 @@ const FIELD_TYPES_UPDATED = (state, fieldTypes) => {
 };
 
 /**
+ * FIELD_DETAILS_UPDATED - object type for mutating create-field module fieldDetails state
+ *
+ * @param {Object} state - stored module state object
+ * @param {Array} fieldDetails - module fieldDetails data mapped to state
+ */
+const FIELD_DETAILS_UPDATED = (state, fieldDetails) => {
+  state.fieldDetails = fieldDetails;
+};
+
+/**
+ * FIELD_TAGS_UPDATED - object type for mutating create-field module fieldTags state
+ *
+ * @param {Object} state - stored module state object
+ * @param {Array} fieldTags - module fieldTags data mapped to state
+ */
+const FIELD_TAGS_UPDATED = (state, fieldTags) => {
+  state.fieldTags = fieldTags;
+};
+
+/**
  * FIELD_GROUPS_UPDATED - object type for mutating create-field module fieldGroups state
  *
  * @param {Object} state - stored module state object
@@ -32,5 +52,7 @@ const FIELD_GROUPS_UPDATED = (state, fieldGroups) => {
 export default {
   CREATE_FIELD_UPDATED,
   FIELD_TYPES_UPDATED,
+  FIELD_DETAILS_UPDATED,
+  FIELD_TAGS_UPDATED,
   FIELD_GROUPS_UPDATED
 };

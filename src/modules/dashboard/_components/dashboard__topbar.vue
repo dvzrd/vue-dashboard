@@ -7,7 +7,7 @@
         v-on:click="handleToggleSidebar"
       >
         <i
-          class="icon fa fa-chevron-right"
+          class="icon fa fa-bars"
           aria-hidden="true"
           v-if="!sidebarExtend"
         />
@@ -75,7 +75,7 @@
               to="/account/groups"
               class="link link--container dropdown__menu--link"
             >
-              Groups
+              Manage Groups
               <i class="icon fa fa-sitemap" aria-hidden="true"></i>
             </router-link>
           </li>
@@ -87,9 +87,21 @@
               to="/account/fields"
               class="link link--container dropdown__menu--link"
             >
-              Fields
+              Edit Fields
               <i class="icon fa fa-pencil" aria-hidden="true"></i>
             </router-link>
+          </li>
+          <li
+            class="item item--stack dropdown__menu--item"
+            v-on:click="handleCloseDropdown"
+          >
+            <button
+              type="button"
+              class="button button--spread button--warn button--icon-label dropdown__menu--button"
+            >
+              <i class="icon fa fa-lock" aria-hidden="true"></i>
+              Lock Account
+            </button>
           </li>
         </ul>
         <!-- dropdown-menu-options -->
@@ -115,6 +127,18 @@
             v-on:click="handleCloseDropdown"
           >
             <router-link
+              to="/account/plan"
+              class="link link--container dropdown__menu--link"
+            >
+              <i class="icon fa fa-map" aria-hidden="true"></i>
+              Plan
+            </router-link>
+          </li>
+          <li
+            class="item item--stack dropdown__menu--item"
+            v-on:click="handleCloseDropdown"
+          >
+            <router-link
               to="/account/settings"
               class="link link--container dropdown__menu--link"
             >
@@ -127,11 +151,11 @@
             v-on:click="handleCloseDropdown"
           >
             <router-link
-              to="/account/packages"
+              to="/account/package"
               class="link link--container dropdown__menu--link"
             >
-              Packages
-              <i class="icon fa fa-microchip" aria-hidden="true"></i>
+              <i class="icon fa fa-cube" aria-hidden="true"></i>
+              Package
             </router-link>
           </li>
           <li
@@ -142,8 +166,8 @@
               type="button"
               class="button button--spread button--fail button--icon-label dropdown__menu--button"
             >
-              <i class="icon fa fa-sign-out" aria-hidden="true"></i>
               Logout
+              <i class="icon fa fa-sign-out" aria-hidden="true"></i>
             </button>
           </li>
         </ul>
@@ -289,13 +313,15 @@
         justify-content: flex-end;
 
         .topbar__context--user {
-          flex: 1;
+          flex: 8;
           margin-right: $space-frame;
+          margin-left: $space-clear;
           font-size: $size-legal;
+          text-align: right;
         }
 
         .topbar__media--avatar {
-          flex: 0;
+          flex: 2;
           margin: 0;
           border-radius: 50%;
           width: $space-clear;
@@ -350,33 +376,32 @@
           }
         }
 
-        .dropdown__menu--link {
+        .dropdown__menu--link,
+        .dropdown__menu--button {
+          text-align: right;
           display: block;
+          margin: 0;
           padding: $space-split;
           padding-right: $space-spread;
-          color: $lynch;
           font-size: $size-legal;
 
           .icon {
+            margin: 0;
             right: $space-frame;
           }
+        }
+
+        .dropdown__menu--link {
+          color: $bayoux;
 
           &:hover {
             background: $athens;
-            color: $bali;
+            color: $spruce;
           }
         }
 
         .dropdown__menu--button {
-          text-align: right;
-          margin: 0;
-          padding: $space-frame;
-          font-size: $space-trim;
-
-          .icon {
-            left: $space-frame;
-            transition: $shift-base;
-          }
+          color: $night;
         }
 
         &.open {

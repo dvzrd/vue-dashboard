@@ -2,9 +2,6 @@
  * Theme Styles - to import theme stylesheets
  */
 
-// Import fonts
-@import 'fonts/fonts';
-
 // Import color palette variables
 @import 'palette';
 
@@ -17,11 +14,11 @@
 // Import design content variables
 @import 'content';
 
-// Import variable overrides
-@import 'variables';
+// Import fonts
+@import 'fonts/fonts';
 
 // Import core styles
 @import 'core/core';
 
 // Import theme patches
-@import 'patches';
+@import 'override/override';

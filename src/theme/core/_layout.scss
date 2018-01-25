@@ -22,6 +22,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
+  background: $canvas-base;
 
   .header,
   .main,

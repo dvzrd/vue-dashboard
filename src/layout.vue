@@ -21,5 +21,5 @@
 
 <style lang="scss">
   // Import global theme styles for app
-  @import './theme/styles';
+  @import './theme/theme';
 </style>

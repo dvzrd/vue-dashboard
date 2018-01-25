@@ -128,6 +128,20 @@
             type="button"
             class="button button--spread button--info button--icon-label sidebar__menu--button"
           >
+            <i class="icon fa fa-phone" aria-hidden="true"></i>
+            <span class="label label--menu sidebar__menu--label">
+              Contact Us
+            </span>
+          </button>
+        </li>
+        <li
+          class="item item--stack sidebar__menu--item"
+          v-on:click="handleCloseDropdown"
+        >
+          <button
+            type="button"
+            class="button button--spread button--pass button--icon-label sidebar__menu--button"
+          >
             <i class="icon fa fa-life-ring" aria-hidden="true"></i>
             <span class="label label--menu sidebar__menu--label">
               Get Help
@@ -207,7 +221,7 @@
       align-items: flex-start;
       height: 100vh;
       width: $space-core;
-      box-shadow: $shadow-drop $night inset;
+      box-shadow: $shadow-drop $night;
     }
 
     // dashboard sidebar expand
@@ -239,15 +253,6 @@
           flex-flow: row wrap;
         }
 
-        .sidebar__menu--item {
-          margin: 0;
-          flex: 1;
-
-          @media only screen and (min-width: $tablet) {
-            flex: $fill-base;
-          }
-        }
-
         &#navigation {
           align-items: flex-start;
           align-content: flex-start;
@@ -264,6 +269,30 @@
           @media only screen and (min-width: $tablet) {
             display: flex;
           }
+        }
+      }
+
+      .sidebar__menu--item {
+        margin: 0;
+        flex: 1;
+
+        @media only screen and (min-width: $tablet) {
+          flex: $fill-base;
+        }
+
+        .icon {
+          margin: 0;
+          color: $cadet;
+          font-size: $size-brief;
+        }
+
+        .sidebar__menu--label {
+          opacity: 0;
+          position: absolute;
+          visibility: hidden;
+          transition: none;
+          margin-left: $space-mast;
+          color: $light;
         }
       }
 
@@ -299,26 +328,53 @@
         text-align: left;
         font-size: $space-trim;
         padding: $space-frame;
+        background: $night;
         margin: 0;
 
-        .icon {
-          color: $light;
+        &.button--info {
+
+          .icon {
+            color: $serve-info;
+          }
+
+          &:hover {
+            background: $serve-info;
+
+            .icon {
+              color: $night;
+            }
+          }
         }
-      }
 
-      .icon {
-        margin: 0;
-        color: $brand-accent;
-        font-size: $size-brief;
-      }
+        &.button--pass {
 
-      .sidebar__menu--label {
-        opacity: 0;
-        position: absolute;
-        visibility: hidden;
-        transition: none;
-        margin-left: $space-mast;
-        color: $light;
+          .icon {
+            color: $serve-pass;
+          }
+
+          &:hover {
+            background: $serve-pass;
+
+            .icon {
+              color: $night;
+            }
+          }
+        }
+
+        &.button--warn {
+
+          .icon {
+            color: $serve-warn;
+          }
+
+          &:hover {
+            background: $serve-warn;
+
+            .icon {
+              color: $night;
+            }
+          }
+        }
       }
 
       // dashboard sidebar menu expand

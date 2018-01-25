@@ -1,5 +1,5 @@
 <template>
-  <section
+  <form
     v-bind:id="config.id"
     class="container create-field__container"
   >
@@ -9,12 +9,14 @@
     />
     <FieldDetailsContainer
       :config="config.main"
+      :fieldDetails="fieldDetails"
+      :fieldTags="fieldTags"
     />
     <FieldGroupsContainer
       :config="config.sidebar"
       :fieldGroups="fieldGroups"
     />
-  </section>
+  </form>
 </template>
 
 <script>
@@ -34,6 +36,8 @@
       ...mapGetters({
         config: '$_createField/config',
         fieldTypes: '$_createField/fieldTypes',
+        fieldDetails: '$_createField/fieldDetails',
+        fieldTags: '$_createField/fieldTags',
         fieldGroups: '$_createField/fieldGroups'
       })
     },
@@ -43,6 +47,8 @@
     mounted() {
       this.$store.dispatch('$_createField/getConfig');
       this.$store.dispatch('$_createField/getFieldTypes');
+      this.$store.dispatch('$_createField/getFieldDetails');
+      this.$store.dispatch('$_createField/getFieldTags');
       this.$store.dispatch('$_createField/getFieldGroups');
     }
   }

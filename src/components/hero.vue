@@ -44,7 +44,7 @@
         .dashboard__hero--meta {
           display: inline-block;
           margin: 0;
-          margin-left: $space-split;
+          margin-left: $space-press;
           color: $loblolly;
           font-size: 90%;
         }

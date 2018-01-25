@@ -111,7 +111,14 @@ This is a high level outline of the file structure, for a more detailed look int
 
 ## Development Notes
 
-### Feature Goals
+### Known Issues
+
+* Passing config prop to containers in module logs undefined in console but the passed data still renders. This is most likely an issue with the time out that simulates the api.
+  * Need to add async middleware layer to pass props to module containers - look for a `thunk` library for `vuex`.
+  * This can be resolved by refactoring the structure of the module - read Optimzation Concepts below for more details.
+  * content hardcoded for this example since this issue is low priority.
+
+### MVP Goals
 
 * Create Field Module 
   * Field Types Container
@@ -133,12 +140,41 @@ This is a high level outline of the file structure, for a more detailed look int
     * Cancel Changes - reset store to default state
     * Delete Input - remove this input from store
 
-### Known Issues
+### Optimization Goals
 
-* Passing config prop to containers in module logs undefined in console but the passed data still renders. This is most likely an issue with the time out that simulates the api.
-  * Need to add async middleware layer to pass props to module containers - look for a `thunk` library for `vuex`.
-  * This can be resolved by refactoring the structure of the module - read Optimzation Concepts below for more details.
-  * content hardcoded for this example since this issue is low priority.
+#### Add GraphQL to handle data flow between client and server
+
+Connect module data mutations with GraphQL layer to pass data from client storage to a collection on the server.
+
+* Look into `apollo-vue` and other solutions using GraphQL, Vue and Vuex.
+* Look into middleware solutions using Vue and Vuex and GraphQL to create async data requests.
+
+#### Connect modular components, containers and views under core theme
+
+Need to recycle a bunch of repeating code - specifically flex-box rules shared by the dashboard and other modules.
+
+* Create SASS Mixins and Utilities for theme
+* Merge repeating/shared styles into global styles inside theme.
+* Refactor classnames to closely resemble component heirarchy merged with global dashboard styles.
+* Create core config provider to serve data to dashboard client and filter it according to route and store state - use `vue-router` and `vue`
+  * Look into Feature Concepts below for more details.
+* Consider sourcing a dashboard library/framework from a vendor and then layer custom code.
+  * An ideal solution would be to take only the necessary ui components to keep load times small or integrate them into core - my preference is to build ui components as needed and refactor them later this is why I didn't use bootstrap or other libraries.
+  * Some dashboards to reference: [Core UI](https://github.com/mrholek/CoreUI-Vue), [Vue Paper](https://github.com/cristijora/vue-paper-dashboard)
+
+#### Refactor Dashboard Module
+
+Find a way to make dashboard module a global wrapper that can control all the smaller modules, like `create-field`.
+
+* Look into `vue` and `vuex` architecture solutions if any were already suggested, specifically dealing with dashboards or large applications.
+* Look into creating modular global components that can be used by smaller modules - in this case, modules share header, sidebar, main section, and footer. Find a way to recycle these components and only extend them when necessary for each relative module.
+
+#### Refactor Create Field Module
+
+Refactor `create-field` to function as a wrapper to connect containers that share data to each other. Break up containers into seperate modules that have their own api and store.
+
+* Look into `vuex` to connect components with props to share information between store.
+* Create a global store - this can be the refactored dashboard module. This can be called `core` since the namespace of the project is already dashboard.
 
 ### Feature Concepts
 
@@ -156,21 +192,6 @@ Create a theme provider to inject configured theme styles into the layout
 * Look into `styled-componets` to see how this was accomplished with react.
 * Look into `vue-styled-components` to resolve open issue regarding [ThemeProvider](https://github.com/styled-components/vue-styled-components/issues/26)
 
-### Optimization Concepts
-
-#### Refactor Dashboard Module
-
-Find a way to make dashboard module a global wrapper that can control all the smaller modules, like `create-field`.
-
-* Look into `vue` and `vuex` architecture solutions if any were already suggested, specifically dealing with dashboards or large applications.
-* Look into creating modular global components that can be used by smaller modules - in this case, modules share header, sidebar, main section, and footer. Find a way to recycle these components and only extend them when necessary for each relative module.
-
-#### Refactor Create Field Module
-
-Refactor `create-field` to function as a wrapper to connect containers that share data to each other. Break up containers into seperate modules that have their own api and store.
-
-* Look into `vuex` to connect components with props to share information between store.
-* Create a global store - this can be the refactored dashboard module. This can be called `core` since the namespace of the project is already dashboard.
 
 ## Documentation
 

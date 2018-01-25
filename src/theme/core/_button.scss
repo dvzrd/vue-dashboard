@@ -9,12 +9,12 @@
   line-height: $height-core;
   margin: $gutter-base;
   padding: $gutter-action;
-  background: $athens;
+  background: $loblolly;
   color: $smoke;
   transition: $shift-base;
 
   &:hover {
-    background: $loblolly;
+    background: $cadet;
     color: $smoke;
   }
 

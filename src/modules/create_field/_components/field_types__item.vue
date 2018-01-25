@@ -3,6 +3,9 @@
     v-bind:id="fieldType.id"
     class="item toolbar__item field-types__item">
     <h4 v-text="fieldType.type"></h4>
+    <i
+      v-bind:class="`icon fa ${fieldType.icon}`"
+    ></i>
     <h6>Description</h6>
     <p v-text="fieldType.desc"></p>
     <h6>Default Display</h6>

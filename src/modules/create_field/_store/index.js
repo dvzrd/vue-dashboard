@@ -6,6 +6,8 @@ import mutations from './mutations';
 const state = {
   config: {},
   fieldTypes: [],
+  fieldDetails: [],
+  fieldTags: [],
   fieldGroups: []
 };
 
