@@ -30,8 +30,16 @@
       config: {
         type: Object
       },
+      selected: {
+        type: String
+      },
       fieldTypes: {
         type: Array
+      }
+    },
+    methods: {
+      handleFieldTypesFilter () {
+        this.$store.dispatch('$_createField/filterFieldTypes');
       }
     }
   }

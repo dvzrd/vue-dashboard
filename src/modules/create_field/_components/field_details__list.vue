@@ -47,10 +47,7 @@
     }
 
     @media only screen and (min-width: $desktop) {
-      margin-top: 0;
-      position: fixed;
-      top: $frame-min;
-      width: $frame-main;
+      margin-top: $space-core;
     }
   }
 </style>

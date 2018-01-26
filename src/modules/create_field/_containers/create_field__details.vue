@@ -113,12 +113,6 @@
   .main__footer {
     display: flex;
     padding: $space-frame;
-
-    @media only screen and (min-width: $desktop) {
-      position: fixed;
-      top: $frame-card;
-      width: $frame-main;
-    }
   }
 
   .main__footer--heading {

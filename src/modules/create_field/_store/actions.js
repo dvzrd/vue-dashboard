@@ -31,6 +31,15 @@ const getFieldTypes = context =>
     });
 
 /**
+ * filterByType - filter fields array by object's type key
+ *
+ * @param {Array} fields - array of fields used to filter by type
+ * @param {String} type - string value used to filter array by matching against type key
+ */
+const filterByType = (fields, type) =>
+  !type ? fields : fields.filter(field => field.type == type);
+
+/**
  * getFieldDetails - commit field-details data fetched from api
  *
  * @param {Object} context - methods/params needed to complete action

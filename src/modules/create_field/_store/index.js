@@ -6,9 +6,13 @@ import mutations from './mutations';
 const state = {
   config: {},
   fieldTypes: [],
+  filterFieldTypes: [],
+  selectedFieldType: null,
   fieldDetails: [],
   fieldTags: [],
-  fieldGroups: []
+  selectedTagGroup: null,
+  fieldGroups: [],
+  selectedFieldGroup: null
 };
 
 // Export available create-field module store features

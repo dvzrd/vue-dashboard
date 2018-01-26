@@ -19,6 +19,26 @@ const FIELD_TYPES_UPDATED = (state, fieldTypes) => {
 };
 
 /**
+ * FILTER_FIELD_TYPES_UPDATED - object type for mutating create-field module filterFieldTypes state
+ *
+ * @param {Object} state - stored module state object
+ * @param {Array} filterFieldTypes - module filterFieldTypes data mapped to state
+ */
+const FILTER_FIELD_TYPES_UPDATED = (state, filterFieldTypes) => {
+  state.filterFieldTypes = filterFieldTypes;
+};
+
+/**
+ * SELECTED_FIELD_TYPE_UPDATED - object type for mutating create-field module selectedFieldType state
+ *
+ * @param {Object} state - stored module state object
+ * @param {String} selectedFieldType - module selectedFieldType data mapped to state
+ */
+const SELECTED_FIELD_TYPE_UPDATED = (state, selectedFieldType) => {
+  state.selectedFieldType = selectedFieldType
+};
+
+/**
  * FIELD_DETAILS_UPDATED - object type for mutating create-field module fieldDetails state
  *
  * @param {Object} state - stored module state object
@@ -39,6 +59,16 @@ const FIELD_TAGS_UPDATED = (state, fieldTags) => {
 };
 
 /**
+ * SELECTED_TAG_GROUP_UPDATED - object type for mutating create-field module selectedTagGroup state
+ *
+ * @param {Object} state - stored module state object
+ * @param {String} selectedTagGroup - module selectedTagGroup data mapped to state
+ */
+const SELECTED_TAG_GROUP_UPDATED = (state, selectedTagGroup) => {
+  state.selectedTagGroup = selectedTagGroup
+};
+
+/**
  * FIELD_GROUPS_UPDATED - object type for mutating create-field module fieldGroups state
  *
  * @param {Object} state - stored module state object
@@ -46,6 +76,16 @@ const FIELD_TAGS_UPDATED = (state, fieldTags) => {
  */
 const FIELD_GROUPS_UPDATED = (state, fieldGroups) => {
   state.fieldGroups = fieldGroups;
+};
+
+/**
+ * SELECTED_FIELD_GROUP_UPDATED - object type for mutating create-field module selectedFieldGroup state
+ *
+ * @param {Object} state - stored module state object
+ * @param {String} selectedFieldGroup - module selectedFieldGroup data mapped to state
+ */
+const SELECTED_FIELD_GROUP_UPDATED = (state, selectedFieldGroup) => {
+  state.selectedFieldGroup = selectedFieldGroup
 };
 
 // export available create-field module state mutations
