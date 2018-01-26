@@ -27,11 +27,8 @@
       FieldTypesList
     },
     props: {
-      id: {
-        type: String
-      },
-      heading: {
-        type: String
+      config: {
+        type: Object
       },
       fieldTypes: {
         type: Array
@@ -39,3 +36,55 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  // import color palette variables
+  @import '../../../theme/palette';
+  // import design structure variables
+  @import '../../../theme/structure';
+  // import design composition variables
+  @import '../../../theme/composition';
+  // import design content variables
+  @import '../../../theme/content';
+
+  // TODO: create modular dashboard components that share similar styles
+
+  .toolbar__wrapper {
+    @media only screen and (min-width: $phablet) {
+      flex: 2;
+      border-right: $border-dash $bali;
+      border-bottom: $border-dash $bali;
+    }
+
+    @media only screen and (min-width: $tablet) {
+      margin-top: $space-push;
+      margin-right: $frame-rec;
+      border: 0;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      flex: none;
+      margin-right: 0;
+      width: $frame-road;
+    }
+  }
+
+  .toolbar__caption {
+    flex: $fill-base;
+    padding: $space-frame;
+    background: $lynch;
+
+    @media only screen and (min-width: $desktop) {
+      position: fixed;
+      top: $space-shove;
+      width: $frame-road;
+    }
+  }
+
+  .toolbar__heading {
+    margin: 0;
+    color: $athens;
+    font-size: $space-trim;
+    text-transform: uppercase;
+  }
+</style>

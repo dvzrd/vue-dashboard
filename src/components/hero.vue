@@ -22,14 +22,22 @@
 <style lang="scss" scoped>
   // import color palette variables
   @import '../theme/palette';
+  // import design structure variables
+  @import '../theme/structure';
   // import design composition variables
   @import '../theme/composition';
   // import design content variables
   @import '../theme/content';
 
   .dashboard__hero {
+    z-index: 5;
     box-shadow: $shadow-glow $lynch;
     background: $bali;
+
+    @media only screen and (min-width: $tablet) {
+      position: fixed;
+      top: $space-core;
+    }
 
     .dashboard__hero--container {
       padding: $gutter-bar;

@@ -32,5 +32,11 @@
 </script>
 
 <style lang="scss" scoped>
-  // Styles scoped for field-tags-list
+  // import design composition variables
+  @import '../../../theme/composition';
+
+  .field-tags__list {
+    display: flex;
+    flex: $fill-base;
+  }
 </style>

@@ -213,7 +213,7 @@
     left: 0;
     width: 100%;
     height: $space-mast;
-    box-shadow: $shadow-glow $night;
+    box-shadow: $shadow-dash $night;
     background: $bond-core;
     transition: $shift-base;
 
@@ -393,6 +393,18 @@
 
           &#support {
             display: flex;
+
+            @media only screen and (min-width: $phablet) {
+              .sidebar__menu--item {
+                flex: 1;
+              }
+            }
+
+            @media only screen and (min-width: $tablet) {
+              .sidebar__menu--item {
+                flex: $fill-base;
+              }
+            }
           }
         }
 

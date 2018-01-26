@@ -22,5 +22,22 @@
 </script>
 
 <style lang="scss" scoped>
-  // Styles scoped for field-tags-item
+  // import color palette variables
+  @import '../../../theme/palette';
+  // import design composition variables
+  @import '../../../theme/composition';
+  // import design content variables
+  @import '../../../theme/content';;
+
+  .field-tags__item {
+    margin-right: $space-press;
+    margin-bottom: $space-press;
+  }
+
+  .field-tags__tag {
+    padding: $gutter-label;
+    background: $loblolly;
+    font-size: $size-legal;
+    text-align: center;
+  }
 </style>

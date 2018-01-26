@@ -8,15 +8,11 @@ const fetchConfig = new Promise(resolve => {
       root: 'commercial-property', // id of main dashboard view for breadcrumbs
       topbar: {
         id: 'create-field-topbar', // id of topbar for create-field module
-        heading: 'Commercial Property' // heading of main content for dashboard view
+        name: 'Commercial Property' // heading of main content for dashboard view
       },
       toolbar: {
         id: 'field-types', // id of toolbar for create-field module
         name: 'Field Types', // heading of toolbar in create-field module
-        filter: {
-          icon: true, // show filter icon
-          placeholder: 'Filter by field type' // configure filter placeholder
-        }
       },
       main: {
         id: 'field-details', // id of main for create-field module

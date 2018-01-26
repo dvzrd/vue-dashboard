@@ -20,6 +20,8 @@
 <style lang="scss" scoped>
   // import color palette variables
   @import '../../../theme/palette';
+  // import design structure variables
+  @import '../../../theme/structure';
   // import design composition variables
   @import '../../../theme/composition';
   // import design content variables
@@ -27,11 +29,15 @@
 
   .footer__dashboard {
     padding: $gutter-bar;
-    background: $brand-apex;
+    background: $bali;
+
+    @media only screen and (min-width: $tablet) {
+      margin-right: 14em;
+    }
 
     .footer__dashboard--copyright {
       margin: 0;
-      color: $ground-core;
+      color: $night;
     }
   }
 </style>

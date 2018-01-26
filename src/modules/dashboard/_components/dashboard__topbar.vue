@@ -234,7 +234,7 @@
     flex-flow: row wrap;
     justify-content: flex-end;
     padding: $space-split;
-    box-shadow: $shadow-glow $bali;
+    box-shadow: $shadow-dash $bali;
     background: $loblolly;
 
     // topbar frame media

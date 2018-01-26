@@ -55,7 +55,7 @@
     align-self: stretch;
     transition: $shift-base;
     margin-top: $space-core;
-    margin-bottom: $space-core;
+    margin-bottom: $space-mast;
 
     @media only screen and (min-width: $tablet) {
       margin-bottom: 0;

@@ -33,5 +33,24 @@
 </script>
 
 <style lang="scss" scoped>
-  // Styles scoped for field-details-list
+  // import design structure variables
+  @import '../../../theme/structure';
+  // import design composition variables
+  @import '../../../theme/composition';
+
+  .main__container {
+    align-items: flex-start;
+    padding: $space-frame;
+
+    @media only screen and (min-width: $tablet) {
+      margin-left: -$space-frame;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      margin-top: 0;
+      position: fixed;
+      top: $frame-min;
+      width: $frame-main;
+    }
+  }
 </style>

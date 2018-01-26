@@ -8,15 +8,17 @@ $font-apex: $font-base;
 $font-code: Menlo, Monaco, Consolas, monospace;
 
 // Size - variables for font-size
-$size-sub: 0.5em; // small; sub; sup
-$size-legal: 0.75em; // small; time
-$size-base: 1em; // p; body; a; button
-$size-mark: 1.05em; // h6; strong; th
-$size-point: 1.15em; // h6; h5
-$size-brief: 1.3em; // h5; h4
-$size-direct: 1.55em; // h4; h3
-$size-lead: 1.75em; // h3; h2
-$size-legend: 1.9em; // h2; h1
+$size-sub: 0.5em; // small, sub, sup
+$size-meta: 0.6em; // small
+$size-legal: 0.75em; // small, time
+$size-card: 0.85em;
+$size-base: 1em; // p, body, a, button
+$size-mark: 1.05em; // h6, strong, th
+$size-point: 1.15em; // h6, h5
+$size-brief: 1.3em; // h5, h4
+$size-direct: 1.55em; // h4, h3
+$size-lead: 1.75em; // h3, h2
+$size-legend: 1.9em; // h2, h1
 $size-hero: 2.1em; // h1
 
 // Weight - variables for font-weight

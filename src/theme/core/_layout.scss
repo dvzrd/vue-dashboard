@@ -18,6 +18,7 @@
 }
 
 .layout {
+  position: relative;
   min-height: 100vh;
   display: flex;
   position: relative;
@@ -28,6 +29,7 @@
   .main,
   .view,
   .footer {
+    position: relative;
     flex-flow: row wrap;
   }
 
@@ -60,29 +62,6 @@
     align-content: flex-start;
   }
 
-  .wrapper {
-    width: 100%;
-    padding: 0;
-    margin: 0 auto;
-    display: flex;
-    flex-flow: row wrap;
-    background: $canvas-base;
-  }
-
-  .container {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    flex: $fill-base;
-  }
-
-  .frame {
-    flex: 1;
-    display: flex;
-  }
-
   .footer {
     z-index: 1;
     align-self: flex-end;
@@ -95,4 +74,30 @@
       flex-direction: column;
     }
   }
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  background: $canvas-base;
+}
+
+.container {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  flex: $fill-base;
+}
+
+.frame {
+  position: relative;
+  flex: 1;
+  display: flex;
 }

@@ -29,5 +29,35 @@
 </script>
 
 <style lang="scss" scoped>
-  // Styles scoped for field-groups-item
+  // import color palette variables
+  @import '../../../theme/palette';
+  // import design composition variables
+  @import '../../../theme/composition';
+  // import design content variables
+  @import '../../../theme/content';
+
+  .field-groups__item {
+    cursor: pointer;
+    flex: $fill-base;
+    margin-bottom: $space-frame;
+    padding: $space-frame;
+    background: $athens;
+    transition: $shift-base;
+
+    &:hover {
+      box-shadow: $shadow-dash $cadet;
+      background: $loblolly;
+    }
+  }
+
+  .field-groups__heading {
+    margin-bottom: $space-split;
+    font-size: $space-trim;
+  }
+
+  .field-groups__context {
+    margin: 0;
+    font-size: $size-legal;
+    line-height: $height-core;
+  }
 </style>

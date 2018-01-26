@@ -35,5 +35,47 @@
 </script>
 
 <style lang="scss" scoped>
-  // Styles scoped for field-details-item
+  // import color palette variables
+  @import '../../../theme/palette';
+  // import design structure variables
+  @import '../../../theme/structure';
+  // import design composition variables
+  @import '../../../theme/composition';
+  // import design content variables
+  @import '../../../theme/content';
+
+  .field-details__frame {
+    flex-flow: row wrap;
+    flex: $fill-base;
+    margin-bottom: $space-frame;
+
+    @media only screen and (min-width: $tablet) {
+      flex: $fill-half;
+      padding-left: $space-frame;
+    }
+  }
+
+  .field-details__label {
+    flex: $fill-base;
+    margin-bottom: $space-press;
+    color: $brand-apex;
+    font-size: $space-trim;
+    font-weight: $weight-core;
+  }
+
+  .field-details__input {
+    flex: $fill-base;
+    margin-bottom: $space-press;
+    padding: $space-frame;
+    border: $border-base $loblolly;
+    box-shadow: $shadow-base $ground-core inset;
+    font-size: $size-legal;
+  }
+
+  .field-details__legend {
+    flex: $fill-base;
+    margin-bottom: $space-press;
+    padding: 0;
+    font-size: $size-legal;
+  }
 </style>

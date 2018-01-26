@@ -8,7 +8,7 @@
       :fieldGroup="fieldGroup"
     />
     <li
-      class="item field-groups__spinner"
+      class="item field-groups__loading"
       v-if="!fieldGroups || fieldGroups.length === 0"
     >
       Fetching available field groups...
@@ -32,5 +32,13 @@
 </script>
 
 <style lang="scss" scoped>
-  // Styles scoped for field-groups-list
+  // import design composition variables
+  @import '../../../theme/composition';
+
+  .field-groups__list {
+    display: flex;
+    flex-flow: row wrap;
+    flex: $fill-base;
+    padding: $space-frame;
+  }
 </style>

@@ -117,6 +117,8 @@ This is a high level outline of the file structure, for a more detailed look int
   * Need to add async middleware layer to pass props to module containers - look for a `thunk` library for `vuex`.
   * This can be resolved by refactoring the structure of the module - read Optimzation Concepts below for more details.
   * content hardcoded for this example since this issue is low priority.
+* When width is above desktop media query, the dashboard locks the main dorm and side bar inside the view in place. The way I set the interior elements needs to be updated.
+  * Need to create a container element for the main fixed view in the dashboard and use transform translate to position the form as the window scaled.
 
 ### MVP Goals
 
@@ -175,6 +177,8 @@ Refactor `create-field` to function as a wrapper to connect containers that shar
 
 * Look into `vuex` to connect components with props to share information between store.
 * Create a global store - this can be the refactored dashboard module. This can be called `core` since the namespace of the project is already dashboard.
+* Need to refactor the styles for this module since there's some repeating code - ultimately there needs to be a global theme layout.
+* Besdies the shared core theme styles, it is also important to consider having seperate layouts for each module as the size of the app grows. When scaling, each module should share layout classes but also have unique identifier classes as well for extending over core styles.
 
 ### Feature Concepts
 

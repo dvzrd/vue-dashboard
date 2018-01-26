@@ -32,5 +32,23 @@
 </script>
 
 <style lang="scss" scoped>
-  // Styles scoped for field-types-list
+  // import design structure variables
+  @import '../../../theme/structure';
+  // import design composition variables
+  @import '../../../theme/composition';
+
+  .field-types__list {
+    flex: $fill-base;
+    padding: $space-frame;
+
+    @media only screen and (min-width: $phablet) {
+      display: flex;
+      flex-flow: row wrap;
+      margin-left: -$space-frame;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      margin-top: 6.5em;
+    }
+  }
 </style>
