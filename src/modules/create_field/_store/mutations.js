@@ -39,6 +39,16 @@ const FILTERED_FIELD_TYPES_UPDATED = (state, filteredFieldTypes) => {
 };
 
 /**
+ * ACTIVE_FIELD_TYPE_UPDATED - object type for mutating create-field module activeFieldType state
+ *
+ * @param {Object} state - stored module state object
+ * @param {String} activeFieldType - module activeFieldType data mapped to state
+ */
+const ACTIVE_FIELD_TYPE_UPDATED = (state, activeFieldType) => {
+  state.activeFieldType = activeFieldType
+};
+
+/**
  * SELECTED_FIELD_TYPE_UPDATED - object type for mutating create-field module selectedFieldType state
  *
  * @param {Object} state - stored module state object
@@ -104,6 +114,7 @@ export default {
   FIELD_TYPES_UPDATED,
   FIELD_TYPES_FILTER_UPDATED,
   FILTERED_FIELD_TYPES_UPDATED,
+  ACTIVE_FIELD_TYPE_UPDATED,
   SELECTED_FIELD_TYPE_UPDATED,
   FIELD_DETAILS_UPDATED,
   FIELD_TAGS_UPDATED,

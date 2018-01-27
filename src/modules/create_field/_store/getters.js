@@ -3,6 +3,7 @@ const config = state => state.config;
 const fieldTypes = state => state.fieldTypes;
 const fieldTypesFilter = state => state.fieldTypesFilter;
 const filteredFieldTypes = state => state.filteredFieldTypes;
+const activeFieldType = state => state.activeFieldType;
 const selectedFieldType = state => state.selectedFieldType;
 const fieldDetails = state => state.fieldDetails;
 const fieldTags = state => state.fieldTags;
@@ -16,6 +17,7 @@ export default {
   fieldTypes,
   fieldTypesFilter,
   filteredFieldTypes,
+  activeFieldType,
   selectedFieldType,
   fieldDetails,
   fieldTags,

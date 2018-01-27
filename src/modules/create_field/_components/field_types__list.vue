@@ -3,9 +3,12 @@
     id="field-types-list"
     class="list toolbar__list field-types__list">
     <FieldTypesItem
-      v-for="fieldType in fieldTypes"
+      v-for="(fieldType, index) in fieldTypes"
+      :active="index === activeIndex"
+      :index="index"
       :key="fieldType.id"
       :fieldType="fieldType"
+      @newactive="activeFieldType = $event"
     />
     <li
       class="item field-types__spinner"
@@ -24,6 +27,9 @@
       FieldTypesItem
     },
     props: {
+      activeIndex: {
+        type: Number
+      },
       fieldTypes: {
         type: Array
       }

@@ -11,6 +11,7 @@
       </figcaption>
       <FieldTypesFilter />
       <FieldTypesList
+        :activeIndex="activeIndex"
         :fieldTypes="filteredFieldTypes"
       />
     </figure>
@@ -32,6 +33,9 @@
       },
       fieldTypesFilter: {
         type: String
+      },
+      activeIndex: {
+        type: Number
       },
       selected: {
         type: String

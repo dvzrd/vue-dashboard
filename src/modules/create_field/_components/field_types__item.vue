@@ -1,14 +1,18 @@
 <template>
   <li
     v-bind:id="fieldType.id"
-    class="item toolbar__item field-types__item"
-    v-on:click="handleSelectFieldType"
+    v-bind:class="{
+      'item toolbar__item field-types__item': true,
+      'selected': active
+    }"
+    @click.stop="handleSelectFieldType"
   >
     <figure class="card toolbar__card field-types__item--card">
       <figcaption class="caption toolbar__item--caption field-types__item--caption">
         <i
           v-bind:class="`icon fa ${fieldType.icon}`"
-        ></i>
+        >
+        </i>
         <span
           class="caption-label toolbar__item--caption-label field-types__item--caption-label"
           v-text="fieldType.type"
@@ -20,14 +24,16 @@
       </small>
       <p
         class="context toolbar__item--context field-types__item--context"
-        v-text="fieldType.desc">
+        v-text="fieldType.desc"
+      >
       </p>
       <small class="subheading toolbar__item--hint field-types__item--hint">
         Default Display
       </small>
       <p
         class="context toolbar__item--context field-types__item--context"
-        v-text="fieldType.default">
+        v-text="fieldType.default"
+      >
       </p>
     </figure>
   </li>
@@ -37,6 +43,9 @@
   export default {
     name: 'field-types-item',
     props: {
+      active: {
+        type: Boolean
+      },
       fieldType: {
         type: Object
       }
@@ -44,9 +53,12 @@
     methods: {
       handleSelectFieldType () {
         const fieldTypeId = this.fieldType.id;
-        console.log(this.$store);
         console.log('store this.fieldType.id to selectedFieldType state', fieldTypeId);
         this.$store.dispatch('$_createField/setSelectedFieldType', fieldTypeId);
+
+        // TODO: add selected state to item if selected item matches activeIndex
+        // console.log(this.$el);
+        // this.$el.classList.add('selected');
       }
     }
   };
@@ -80,11 +92,15 @@
     }
 
     &.selected {
-      order: 1;
+      order: 0;
       flex: $fill-base;
 
       @media only screen and (min-width: $laptop) {
         flex: $fill-half;
+      }
+
+      @media only screen and (min-width: $desktop) {
+        flex: $fill-base;
       }
 
       .field-types__item--card {

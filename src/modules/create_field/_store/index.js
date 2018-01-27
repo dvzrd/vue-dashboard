@@ -8,6 +8,7 @@ const state = {
   fieldTypes: [],
   fieldTypesFilter: '',
   filterFieldTypes: [],
+  activeFieldType: null,
   selectedFieldType: '',
   fieldDetails: [],
   fieldTags: [],

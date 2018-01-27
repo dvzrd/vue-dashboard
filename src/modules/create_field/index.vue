@@ -6,6 +6,7 @@
     <FieldTypesContainer
       :config="config.toolbar"
       :fieldTypesFilter="fieldTypesFilter"
+      :activeIndex="activeFieldType"
       :selected="selectedFieldType"
       :fieldTypes="fieldTypes"
     />
@@ -42,7 +43,7 @@
         fieldTypes: '$_createField/fieldTypes',
         fieldTypesFilter: '$_createField/fieldTypesFilter',
         filteredFieldTypes: '$_createField/filteredFieldTypes',
-        activeFieldTypeIndex: '$_createField/activeFieldTypeIndex',
+        activeFieldType: '$_createField/activeFieldType',
         selectedFieldType: '$_createField/selectedFieldType',
         // this will remain here as create field components
         fieldDetails: '$_createField/fieldDetails',
