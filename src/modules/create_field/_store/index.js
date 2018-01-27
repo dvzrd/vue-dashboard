@@ -8,12 +8,12 @@ const state = {
   fieldTypes: [],
   fieldTypesFilter: '',
   filterFieldTypes: [],
-  selectedFieldType: null,
+  selectedFieldType: '',
   fieldDetails: [],
   fieldTags: [],
-  selectedTagGroup: null,
+  selectedTagGroup: '',
   fieldGroups: [],
-  selectedFieldGroup: null
+  selectedFieldGroup: ''
 };
 
 // Export available create-field module store features

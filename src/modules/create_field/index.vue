@@ -36,15 +36,21 @@
     },
     computed: {
       ...mapGetters({
+        // TODO: break up into seperate modules
         config: '$_createField/config',
+        // TODO: move to fieldTypes module
         fieldTypes: '$_createField/fieldTypes',
         fieldTypesFilter: '$_createField/fieldTypesFilter',
         filteredFieldTypes: '$_createField/filteredFieldTypes',
+        activeFieldTypeIndex: '$_createField/activeFieldTypeIndex',
         selectedFieldType: '$_createField/selectedFieldType',
+        // this will remain here as create field components
         fieldDetails: '$_createField/fieldDetails',
         fieldReferenceName: '$_createField/fieldReferenceName',
+        // TODO: move to fieldTags module
         fieldTags: '$_createField/fieldTags',
         selectedTagGroup: '$_createField/selectedTagGroup',
+        // TODO: move to fieldGroups module
         fieldGroups: '$_createField/fieldGroups',
         selectedFieldGroup: '$_createField/selectedFieldGroup',
       })

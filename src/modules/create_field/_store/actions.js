@@ -40,6 +40,14 @@ const filterByType = (fields, type) =>
   !type ? fields : fields.filter(field => field.type == type);
 
 /**
+ * setSelectedFieldType - commit selectedFieldType value to store on setSelectedFieldType action
+ *
+ * @param {Object} context - methods/params needed to complete action
+ */
+const setSelectedFieldType = (context, fieldTypeId) =>
+  context.commit('SELECTED_FIELD_TYPE_UPDATED', fieldTypeId);
+
+/**
  * getFieldDetails - commit field-details data fetched from api
  *
  * @param {Object} context - methods/params needed to complete action
@@ -88,6 +96,8 @@ const getFieldGroups = context =>
 export default {
   getConfig,
   getFieldTypes,
+  filterByType,
+  setSelectedFieldType,
   getFieldDetails,
   getFieldTags,
   getFieldGroups

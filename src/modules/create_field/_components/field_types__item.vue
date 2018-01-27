@@ -43,8 +43,10 @@
     },
     methods: {
       handleSelectFieldType () {
-        const selectedFieldType = this.fieldType;
-        console.log('store this.fieldType to selectedFieldType state', selectedFieldType);
+        const fieldTypeId = this.fieldType.id;
+        console.log(this.$store);
+        console.log('store this.fieldType.id to selectedFieldType state', fieldTypeId);
+        this.$store.dispatch('$_createField/setSelectedFieldType', fieldTypeId);
       }
     }
   };
