@@ -8,7 +8,7 @@ const fetchConfig = new Promise(resolve => {
       root: 'commercial-property', // id of main dashboard view for breadcrumbs
       topbar: {
         id: 'create-field-topbar', // id of topbar for create-field module
-        name: 'Commercial Property' // heading of main content for dashboard view
+        name: 'Add Field' // heading of create-field module for dashboard view
       },
       toolbar: {
         id: 'field-types', // id of toolbar for create-field module
@@ -40,6 +40,7 @@ const fetchFieldTypes = new Promise(resolve => {
       {
         id: 'field-type-text',
         type: 'text',
+        name: 'Text',
         icon: 'fa-header',
         desc: 'String of text',
         default: 'Free-form text input',
@@ -47,6 +48,7 @@ const fetchFieldTypes = new Promise(resolve => {
       {
         id: 'field-type-date',
         type: 'date',
+        name: 'Date',
         icon: 'fa-calendar',
         desc: 'Standard ISO format date',
         default: 'Datepicker, with configurable format',
@@ -54,6 +56,7 @@ const fetchFieldTypes = new Promise(resolve => {
       {
         id: 'field-type-vin',
         type: 'vin',
+        name: 'VIN',
         icon: 'fa-car',
         desc: 'Vehicle Identification Number',
         default: 'Free form text input',
@@ -61,6 +64,7 @@ const fetchFieldTypes = new Promise(resolve => {
       {
         id: 'field-type-number',
         type: 'number',
+        name: 'Number',
         icon: 'fa-sort',
         desc: 'String of number(s)',
         default: 'Quantity, limit or ID inputs',
@@ -68,6 +72,7 @@ const fetchFieldTypes = new Promise(resolve => {
       {
         id: 'field-type-currency',
         type: 'currency',
+        name: 'Currency',
         icon: 'fa-money',
         desc: 'Standard currency format options',
         default: 'Expenses or Estimated Value inputs',
@@ -87,6 +92,7 @@ const fetchFieldDetails = new Promise(resolve => {
         name: 'display-label',
         label: 'Display Label',
         legend: 'For display purposes, spaces allowed',
+        action: true,
         required: true,
         error: 'Please provide a display label for the field'
       },
@@ -95,6 +101,7 @@ const fetchFieldDetails = new Promise(resolve => {
         name: 'reference-name',
         label: 'Reference Name',
         legend: 'Used to reference in calculations, no spaces allowed',
+        model: true,
         required: true,
         error: 'Please provide a reference name for the field'
       },
@@ -107,7 +114,9 @@ const fetchFieldDetails = new Promise(resolve => {
         id: 'field-details-regex',
         name: 'custom-validation',
         label: 'Custom Validation',
-        legend: 'Any regex pattern can be used for custom validation'
+        action: true,
+        legend: 'Any regex pattern can be used for custom validation',
+        error: 'This is not a valid regex string'
       }
     ]);
   }, 500);

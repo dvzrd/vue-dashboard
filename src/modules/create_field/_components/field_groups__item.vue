@@ -1,7 +1,9 @@
 <template>
   <li
     v-bind:id="fieldGroup.id"
-    class="item toolbar__item field-groups__item">
+    class="item toolbar__item field-groups__item"
+    v-on:click="handleSelectFieldGroup"
+  >
     <h4
       class="field-groups__heading"
       v-text="fieldGroup.name"
@@ -23,6 +25,12 @@
     props: {
       fieldGroup: {
         type: Object
+      }
+    },
+    methods: {
+      handleSelectFieldGroup () {
+        const selectedFieldGroup = this.fieldGroup;
+        console.log('store this.fieldGroup to selectedFieldGroup state', selectedFieldGroup);
       }
     }
   };

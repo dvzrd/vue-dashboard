@@ -10,13 +10,20 @@
       name="filter"
       class="input input__filter field-types__filter--input"
       placeholder="Filter by field type"
+      @input="updateFieldTypesFilter"
     />
   </form>
 </template>
 
 <script>
   export default {
-    name: 'field-types-filter'
+    name: 'field-types-filter',
+    methods: {
+      updateFieldTypesFilter (event) {
+        console.log('store event value', event.target.value);
+        // this.$store.commit('updateFilter', event.target.value);
+      }
+    }
   };
 </script>
 

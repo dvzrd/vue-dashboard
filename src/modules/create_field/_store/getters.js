@@ -1,7 +1,8 @@
 // create-field module state getters
 const config = state => state.config;
 const fieldTypes = state => state.fieldTypes;
-const filterFieldTypes = state => state.filterFieldTypes;
+const fieldTypesFilter = state => state.fieldTypesFilter;
+const filteredFieldTypes = state => state.filteredFieldTypes;
 const selectedFieldType = state => state.selectedFieldType;
 const fieldDetails = state => state.fieldDetails;
 const fieldTags = state => state.fieldTags;
@@ -13,7 +14,8 @@ const selectedFieldGroup = state => state.selectedFieldGroup;
 export default {
   config,
   fieldTypes,
-  filterFieldTypes,
+  fieldTypesFilter,
+  filteredFieldTypes,
   selectedFieldType,
   fieldDetails,
   fieldTags,

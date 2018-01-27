@@ -1,7 +1,9 @@
 <template>
   <li
     v-bind:id="fieldType.id"
-    class="item toolbar__item field-types__item">
+    class="item toolbar__item field-types__item"
+    v-on:click="handleSelectFieldType"
+  >
     <figure class="card toolbar__card field-types__item--card">
       <figcaption class="caption toolbar__item--caption field-types__item--caption">
         <i
@@ -37,6 +39,12 @@
     props: {
       fieldType: {
         type: Object
+      }
+    },
+    methods: {
+      handleSelectFieldType () {
+        const selectedFieldType = this.fieldType;
+        console.log('store this.fieldType to selectedFieldType state', selectedFieldType);
       }
     }
   };

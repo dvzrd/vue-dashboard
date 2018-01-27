@@ -6,6 +6,7 @@ import mutations from './mutations';
 const state = {
   config: {},
   fieldTypes: [],
+  fieldTypesFilter: '',
   filterFieldTypes: [],
   selectedFieldType: null,
   fieldDetails: [],

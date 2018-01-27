@@ -11,7 +11,7 @@
       </figcaption>
       <FieldTypesFilter />
       <FieldTypesList
-        :fieldTypes="fieldTypes"
+        :fieldTypes="filteredFieldTypes"
       />
     </figure>
   </aside>
@@ -30,6 +30,9 @@
       config: {
         type: Object
       },
+      fieldTypesFilter: {
+        type: String
+      },
       selected: {
         type: String
       },
@@ -37,9 +40,24 @@
         type: Array
       }
     },
+    computed: {
+    filteredFieldTypes () {
+        var self = this;
+        console.log(this);
+
+        console.log('filtered field types')
+        return this.fieldTypes.filter(field =>
+          field.name.toLowerCase()
+            .indexOf(self.fieldTypesFilter.toLowerCase()) >= 0
+        );
+      }
+    },
     methods: {
       handleFieldTypesFilter () {
         this.$store.dispatch('$_createField/filterFieldTypes');
+      },
+      updateFilter (e) {
+        // this.$store.commit('updateFilter', e.target.value)
       }
     }
   }

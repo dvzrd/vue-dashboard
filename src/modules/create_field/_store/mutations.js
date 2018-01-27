@@ -19,13 +19,23 @@ const FIELD_TYPES_UPDATED = (state, fieldTypes) => {
 };
 
 /**
- * FILTER_FIELD_TYPES_UPDATED - object type for mutating create-field module filterFieldTypes state
+ * FIELD_TYPES_FILTER_UPDATED - object type for mutating create-field module filteredFieldTypes state
  *
  * @param {Object} state - stored module state object
- * @param {Array} filterFieldTypes - module filterFieldTypes data mapped to state
+ * @param {Array} fieldTypesFilter - module fieldTypesFilter data mapped to state
  */
-const FILTER_FIELD_TYPES_UPDATED = (state, filterFieldTypes) => {
-  state.filterFieldTypes = filterFieldTypes;
+const FIELD_TYPES_FILTER_UPDATED = (state, fieldTypesFilter) => {
+  state.fieldTypesFilter = fieldTypesFilter;
+};
+
+/**
+ * FILTERED_FIELD_TYPES_UPDATED - object type for mutating create-field module filteredFieldTypes state
+ *
+ * @param {Object} state - stored module state object
+ * @param {Array} filteredFieldTypes - module filteredFieldTypes data mapped to state
+ */
+const FILTERED_FIELD_TYPES_UPDATED = (state, filteredFieldTypes) => {
+  state.filteredFieldTypes = filteredFieldTypes;
 };
 
 /**

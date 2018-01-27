@@ -8,9 +8,39 @@
       v-text="fieldDetail.label"
     >
     </label>
+    <!-- TODO: render inputs using vue computed method instead of conditionals -->
     <input
+      v-if="!fieldDetail.action && !fieldDetail.model"
       type="text"
+      v-bind:ref="fieldDetail.name"
       v-bind:name="fieldDetail.name"
+      class="input main__input field-details__input"
+    />
+    <!-- field-details-label input -->
+    <input
+      v-if="fieldDetail.id === 'field-details-label'"
+      type="text"
+      v-bind:ref="fieldDetail.id"
+      v-bind:name="fieldDetail.name"
+      class="input main__input field-details__input"
+      @blur="updateFieldReferenceName"
+    />
+    <!-- field-details-ref input -->
+    <input
+      v-if="fieldDetail.id === 'field-details-ref'"
+      type="text"
+      v-bind:ref="fieldDetail.id"
+      v-bind:name="fieldDetail.name"
+      v-bind:value="'add-reference-name-here'"
+      class="input main__input field-details__input"
+    />
+    <!-- field-details-regex input -->
+    <input
+      v-if="fieldDetail.id === 'field-details-regex'"
+      type="text"
+      v-bind:ref="fieldDetail.id"
+      v-bind:name="fieldDetail.name"
+      @blur="validateFieldRegexValue"
       class="input main__input field-details__input"
     />
     <legend
@@ -29,6 +59,21 @@
     props: {
       fieldDetail: {
         type: Object
+      }
+    },
+    methods: {
+      updateFieldReferenceName (event) {
+        // TODO: refactor to use `fieldDetail.id` to get refs value
+        // this can be done inside computed method when refactoring above template conditions
+        const displayLabel = this.$refs['field-details-label'].value;
+
+        console.log('store display-label value on blur', displayLabel);
+        // this.$store.commit('updateReferenceName', displayLabel);
+      },
+      validateFieldRegexValue (event) {
+        const customValidation = this.$refs['field-details-regex'].value;
+
+        console.log('if not regex string - show error', customValidation);
       }
     }
   };

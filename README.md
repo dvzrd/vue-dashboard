@@ -200,6 +200,10 @@ Create a theme provider to inject configured theme styles into the layout
 
 * Make `field-types` and `field-groups` into collapsible sidebars, affixed to the dashboard. Will need to share state with the dashbard sidebar.
 
+### Other Thoughts
+
+* Need to look into vue styleguides, still not sure when it's best to use `<component-name></component-name>` or `<ComponentName>`. Will have to read up on this to get a better idea.
+
 ## Documentation
 
 ### Design System and Theme Provider

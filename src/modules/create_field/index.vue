@@ -5,6 +5,7 @@
   >
     <FieldTypesContainer
       :config="config.toolbar"
+      :fieldTypesFilter="fieldTypesFilter"
       :selected="selectedFieldType"
       :fieldTypes="fieldTypes"
     />
@@ -37,9 +38,11 @@
       ...mapGetters({
         config: '$_createField/config',
         fieldTypes: '$_createField/fieldTypes',
-        filterFieldTypes: '$_createField/filterFieldTypes',
+        fieldTypesFilter: '$_createField/fieldTypesFilter',
+        filteredFieldTypes: '$_createField/filteredFieldTypes',
         selectedFieldType: '$_createField/selectedFieldType',
         fieldDetails: '$_createField/fieldDetails',
+        fieldReferenceName: '$_createField/fieldReferenceName',
         fieldTags: '$_createField/fieldTags',
         selectedTagGroup: '$_createField/selectedTagGroup',
         fieldGroups: '$_createField/fieldGroups',
@@ -55,6 +58,8 @@
       this.$store.dispatch('$_createField/getFieldDetails');
       this.$store.dispatch('$_createField/getFieldTags');
       this.$store.dispatch('$_createField/getFieldGroups');
+
+      console.log(this.$store);
     }
   }
 </script>
