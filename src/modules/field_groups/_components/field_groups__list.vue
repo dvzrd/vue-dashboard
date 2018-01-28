@@ -5,10 +5,11 @@
     <FieldGroupsItem
       v-for="fieldGroup in fieldGroups"
       :key="fieldGroup.id"
+      :selected="fieldGroup.id === selectedFieldGroup"
       :fieldGroup="fieldGroup"
     />
     <li
-      class="item field-groups__loading"
+      class="item loading__item field-groups__loading"
       v-if="!fieldGroups || fieldGroups.length === 0"
     >
       Fetching available field groups...
@@ -24,6 +25,9 @@
       FieldGroupsItem
     },
     props: {
+      selectedFieldGroup: {
+        type: String
+      },
       fieldGroups: {
         type: Array
       }

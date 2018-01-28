@@ -1,26 +1,31 @@
 <template>
   <aside
-    id="field-groups"
-    class="wrapper sidebar__wrapper create-field__field-groups--sidebar"
+    v-bind:id="config.id"
+    v-bind:class="`wrapper ${config.pattern}__wrapper ${config.parent}__${config.id}--${config.pattern}`"
   >
-    <figure class="container sidebar__container field-groups__sidebar--container">
-      <figcaption class="caption sidebar__caption field-groups__sidebar--caption">
-        <h3 class="heading sidebar__heading field-groups__sidebar--heading">
-          Field Groups
+    <figure v-bind:class="`container ${config.pattern}__container ${config.id}__${config.pattern}--container`">
+      <figcaption v-bind:class="`caption ${config.pattern}__caption ${config.id}__${config.pattern}--caption`">
+        <h3
+          v-bind:class="`heading ${config.pattern}__heading ${config.id}__${config.pattern}--heading`"
+          v-text="config.name"
+        >
         </h3>
       </figcaption>
       <FieldGroupsList
+        :selectedFieldGroup="selectedFieldGroup"
         :fieldGroups="fieldGroups"
       />
-      <footer class="footer sidebar__footer field-groups__sidebar--footer">
-        <mark class="hint sidebar__hint field-groups__sidebar--hint">
-          Choose a group for this field
+      <footer v-bind:class="`footer ${config.pattern}__footer ${config.id}__${config.pattern}--footer`">
+        <mark
+          v-bind:class="`hint ${config.pattern}__hint ${config.id}__${config.pattern}--hint`"
+          v-text="config.hint"
+        >
         </mark>
         <button
           type="button"
-          class="button button--brand sidebar__button field-groups__sidebar--button"
+          v-bind:class="`button button--brand ${config.pattern}__button ${config.id}__${config.pattern}--button`"
+          v-text="config.cta"
         >
-          Create New Group
         </button>
       </footer>
     </figure>
@@ -28,33 +33,42 @@
 </template>
 
 <script>
-  import FieldGroupsList from '../_components/field_groups__list'
+  import { mapGetters } from 'vuex';
+  import store from './_store';
+  import FieldGroupsList from './_components/field_groups__list'
   export default {
-    name: 'field-groups-container',
+    name: 'field-groups-module',
     components: {
       FieldGroupsList
     },
-    props: {
-      config: {
-        type: Object
-      },
-      fieldGroups: {
-        type: Array
-      }
+    computed: {
+      ...mapGetters({
+        config: '$_fieldGroups/config',
+        fieldGroups: '$_fieldGroups/fieldGroups',
+        selectedFieldGroup: '$_fieldGroups/selectedFieldGroup'
+      })
+    },
+    created() {
+      this.$store.registerModule('$_fieldGroups', store);
+    },
+    mounted() {
+      this.$store.dispatch('$_fieldGroups/getConfig');
+      this.$store.dispatch('$_fieldGroups/getFieldGroups');
     }
   }
 </script>
 
 <style lang="scss" scoped>
   // import color palette variables
-  @import '../../../theme/palette';
+  @import '../../theme/palette';
   // import design structure variables
-  @import '../../../theme/structure';
+  @import '../../theme/structure';
   // import design composition variables
-  @import '../../../theme/composition';
+  @import '../../theme/composition';
   // import design content variables
-  @import '../../../theme/content';
+  @import '../../theme/content';
 
+  // TODO: create reusable dashboard components and import them into this container
   .sidebar__wrapper {
     background: $loblolly;
     z-index: 4;

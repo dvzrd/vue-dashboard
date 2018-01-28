@@ -1,7 +1,10 @@
 <template>
   <li
     v-bind:id="fieldGroup.id"
-    class="item toolbar__item field-groups__item"
+    v-bind:class="{
+      'item toolbar__item field-groups__item': true,
+      'selected': selected
+    }"
     v-on:click="handleSelectFieldGroup"
   >
     <h4
@@ -23,14 +26,17 @@
   export default {
     name: 'field-groups-item',
     props: {
+      selected: {
+        type: Boolean
+      },
       fieldGroup: {
         type: Object
       }
     },
     methods: {
       handleSelectFieldGroup () {
-        const selectedFieldGroup = this.fieldGroup;
-        console.log('store this.fieldGroup to selectedFieldGroup state', selectedFieldGroup);
+        const fieldGroupId = this.fieldGroup.id;
+        this.$store.dispatch('$_fieldGroups/selectFieldGroup', fieldGroupId);
       }
     }
   };
@@ -56,16 +62,35 @@
       box-shadow: $shadow-dash $cadet;
       background: $loblolly;
     }
+
+    &.selected {
+      background: $lynch;
+    }
   }
 
   .field-groups__heading {
     margin-bottom: $space-split;
     font-size: $space-trim;
+
+    .selected & {
+      color: $light;
+    }
   }
 
   .field-groups__context {
     margin: 0;
     font-size: $size-legal;
     line-height: $height-core;
+
+    .selected & {
+      color: $loblolly;
+    }
+  }
+
+  .field-groups__meta {
+
+    .selected & {
+      color: $loblolly;
+    }
   }
 </style>

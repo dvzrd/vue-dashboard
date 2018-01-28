@@ -1,7 +1,7 @@
 <template>
   <section
     v-bind:id="config.id"
-    class="container dashboard__container"
+    v-bind:class="`container ${config.id}__container`"
   >
     <DashboardTopbar
       :dropdownOpen="dropdownOpen"

@@ -2,15 +2,16 @@ import actions from './actions';
 import getters from './getters';
 import mutations from './mutations';
 
-// Configure create-field module default state
+// Configure field-types module default state
 const state = {
   config: {},
-  fieldDetails: [],
-  fieldTags: [],
-  selectedTagGroup: ''
+  fieldTypes: [],
+  fieldTypesFilter: '',
+  filteredByType: [],
+  selectedFieldType: ''
 };
 
-// Export available create-field module store features
+// Export available field-types module store features
 export default {
   namespaced: true,
   state,

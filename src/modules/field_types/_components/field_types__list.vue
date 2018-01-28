@@ -3,15 +3,13 @@
     id="field-types-list"
     class="list toolbar__list field-types__list">
     <FieldTypesItem
-      v-for="(fieldType, index) in fieldTypes"
-      :active="index === activeIndex"
-      :index="index"
+      v-for="fieldType in fieldTypes"
       :key="fieldType.id"
+      :selected="fieldType.id === selectedFieldType"
       :fieldType="fieldType"
-      @newactive="activeFieldType = $event"
     />
     <li
-      class="item field-types__spinner"
+      class="item loading__item field-types__loading"
       v-if="!fieldTypes || fieldTypes.length === 0"
     >
       Fetching available field types...
@@ -27,8 +25,8 @@
       FieldTypesItem
     },
     props: {
-      activeIndex: {
-        type: Number
+      selectedFieldType: {
+        type: String
       },
       fieldTypes: {
         type: Array
@@ -43,6 +41,7 @@
   // import design composition variables
   @import '../../../theme/composition';
 
+  // field types list layout
   .field-types__list {
     flex: $fill-base;
     padding: $space-frame;
@@ -54,7 +53,7 @@
     }
 
     @media only screen and (min-width: $desktop) {
-      margin-top: 6.5em;
+      margin-top: $space-apex + $space-split;
     }
   }
 </style>

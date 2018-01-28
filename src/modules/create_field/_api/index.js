@@ -10,75 +10,15 @@ const fetchConfig = new Promise(resolve => {
         id: 'create-field-topbar', // id of topbar for create-field module
         name: 'Add Field' // heading of create-field module for dashboard view
       },
-      toolbar: {
-        id: 'field-types', // id of toolbar for create-field module
-        name: 'Field Types', // heading of toolbar in create-field module
-      },
       main: {
         id: 'field-details', // id of main for create-field module
         name: 'Field Details' // heading of main content for module
-      },
-      sidebar: {
-        id: 'field-groups', // id of sidebar for create-field module
-        name: 'Field Groups', // heading of sidebar content in create-field module
-        desc: 'Choose a group for this field', // description of sidebar in create-field module
-        cta: 'Create New Group' // label for call to action in sidebar
       },
       footer: {
         id: 'create-field-footer' // id for create-field footer
       }
     });
   }, 250);
-});
-
-/**
- * fetchFieldTypes - fetch array used to render field-types data
- */
-const fetchFieldTypes = new Promise(resolve => {
-  setTimeout(() => {
-    resolve([
-      {
-        id: 'field-type-text',
-        type: 'text',
-        name: 'Text',
-        icon: 'fa-header',
-        desc: 'String of text',
-        default: 'Free-form text input',
-      },
-      {
-        id: 'field-type-date',
-        type: 'date',
-        name: 'Date',
-        icon: 'fa-calendar',
-        desc: 'Standard ISO format date',
-        default: 'Datepicker, with configurable format',
-      },
-      {
-        id: 'field-type-vin',
-        type: 'vin',
-        name: 'VIN',
-        icon: 'fa-car',
-        desc: 'Vehicle Identification Number',
-        default: 'Free form text input',
-      },
-      {
-        id: 'field-type-number',
-        type: 'number',
-        name: 'Number',
-        icon: 'fa-sort',
-        desc: 'String of number(s)',
-        default: 'Quantity, limit or ID inputs',
-      },
-      {
-        id: 'field-type-currency',
-        type: 'currency',
-        name: 'Currency',
-        icon: 'fa-money',
-        desc: 'Standard currency format options',
-        default: 'Expenses or Estimated Value inputs',
-      }
-    ]);
-  }, 500);
 });
 
 /**
@@ -156,26 +96,9 @@ const fetchFieldTags = new Promise(resolve => {
   }, 500);
 });
 
-/**
- * fetchFieldGroups - fetch array used to render field-groups data
- */
-const fetchFieldGroups = new Promise(resolve => {
-  setTimeout(() => {
-    resolve([
-      {
-        id: 'field-group-rvcp',
-        name: 'Rental Vehicle Coverage Package',
-        inputCount: 7
-      }
-    ]);
-  }, 500);
-});
-
 // export available create-field api calls
 export default {
   fetchConfig,
-  fetchFieldTypes,
   fetchFieldDetails,
-  fetchFieldTags,
-  fetchFieldGroups
+  fetchFieldTags
 };

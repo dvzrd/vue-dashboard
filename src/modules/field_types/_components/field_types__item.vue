@@ -3,9 +3,9 @@
     v-bind:id="fieldType.id"
     v-bind:class="{
       'item toolbar__item field-types__item': true,
-      'selected': active
+      'selected': selected
     }"
-    @click.stop="handleSelectFieldType"
+    v-on:click="handleSelectFieldType"
   >
     <figure class="card toolbar__card field-types__item--card">
       <figcaption class="caption toolbar__item--caption field-types__item--caption">
@@ -43,7 +43,7 @@
   export default {
     name: 'field-types-item',
     props: {
-      active: {
+      selected: {
         type: Boolean
       },
       fieldType: {
@@ -53,12 +53,7 @@
     methods: {
       handleSelectFieldType () {
         const fieldTypeId = this.fieldType.id;
-        console.log('store this.fieldType.id to selectedFieldType state', fieldTypeId);
-        this.$store.dispatch('$_createField/setSelectedFieldType', fieldTypeId);
-
-        // TODO: add selected state to item if selected item matches activeIndex
-        // console.log(this.$el);
-        // this.$el.classList.add('selected');
+        this.$store.dispatch('$_fieldTypes/selectFieldType', fieldTypeId);
       }
     }
   };
@@ -74,6 +69,7 @@
   // import design content variables
   @import '../../../theme/content';
 
+  // field-types-item layout
   .field-types__item {
     display: flex;
     margin-bottom: $space-frame;
@@ -102,13 +98,10 @@
       @media only screen and (min-width: $desktop) {
         flex: $fill-base;
       }
-
-      .field-types__item--card {
-        background: $lynch;
-      }
     }
   }
 
+  // field types item card
   .field-types__item--card {
     cursor: pointer;
     margin: 0;
@@ -120,17 +113,31 @@
       box-shadow: $shadow-dash $cadet;
       background: $loblolly;
     }
+
+    .selected & {
+      background: $lynch;
+      color: $loblolly;
+    }
   }
 
   .field-types__item--caption {
     margin-bottom: $space-split;
     font-size: $size-base;
+
+    .selected & {
+      color: $athens;
+    }
   }
 
   .field-types__item--caption-label {
     margin-left: $space-press;
+    transition: $shift-base;
     font-weight: $weight-heavy;
     text-transform: capitalize;
+
+    .selected & {
+      color: $athens;
+    }
   }
 
   .field-types__item--hint {
@@ -140,9 +147,14 @@
 
   .field-types__item--context {
     margin: 0;
+    transition: $shift-base;
     color: $bond-apex;
     font-size: $size-card;
     font-weight: $weight-core;
     line-height: $height-core;
+
+    .selected & {
+      color: $light;
+    }
   }
 </style>

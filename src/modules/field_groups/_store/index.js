@@ -2,15 +2,14 @@ import actions from './actions';
 import getters from './getters';
 import mutations from './mutations';
 
-// Configure create-field module default state
+// Configure field-groups module default state
 const state = {
   config: {},
-  fieldDetails: [],
-  fieldTags: [],
-  selectedTagGroup: ''
+  fieldGroups: [],
+  selectedFieldGroup: ''
 };
 
-// Export available create-field module store features
+// Export available field-groups module store features
 export default {
   namespaced: true,
   state,
