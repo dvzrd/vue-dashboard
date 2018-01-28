@@ -29,9 +29,19 @@ const SELECTED_FIELD_GROUP_UPDATED = (state, selectedFieldGroup) => {
   state.selectedFieldGroup = selectedFieldGroup
 };
 
+/**
+ * CREATE_NEW_FIELD_GROUP_CLICKED - object type for mutating field-groups module createNewFieldGroup state to true boolean value
+ *
+ * @param {Object} state - stored module state object
+ */
+const CREATE_NEW_FIELD_GROUP_CLICKED = state => {
+  state.createNewFieldGroup = true;
+};
+
 // export available field-groups module state mutations
 export default {
   FIELD_GROUPS_CONFIG_UPDATED,
   FIELD_GROUPS_UPDATED,
-  SELECTED_FIELD_GROUP_UPDATED
+  SELECTED_FIELD_GROUP_UPDATED,
+  CREATE_NEW_FIELD_GROUP_CLICKED
 };

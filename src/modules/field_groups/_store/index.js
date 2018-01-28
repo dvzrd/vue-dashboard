@@ -6,7 +6,8 @@ import mutations from './mutations';
 const state = {
   config: {},
   fieldGroups: [],
-  selectedFieldGroup: ''
+  selectedFieldGroup: '',
+  createNewFieldGroup: false
 };
 
 // Export available field-groups module store features

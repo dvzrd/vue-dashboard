@@ -6,6 +6,7 @@ const fetchConfig = new Promise(resolve => {
     resolve({
       id: 'create-field', // id of create-field module for breadcrumbs
       root: 'commercial-property', // id of main dashboard view for breadcrumbs
+      // TODO: refactor below object keys to strings
       topbar: {
         id: 'create-field-topbar', // id of topbar for create-field module
         name: 'Add Field' // heading of create-field module for dashboard view
@@ -62,43 +63,8 @@ const fetchFieldDetails = new Promise(resolve => {
   }, 500);
 });
 
-/**
- * fetchFieldTags - fetch array used to render field-tags data
- */
-const fetchFieldTags = new Promise(resolve => {
-  setTimeout(() => {
-    resolve([
-      {
-        id: 'field-tag-vin',
-        name: 'VIN',
-        groups: [
-          'Vinmaster',
-          'ISO'
-        ]
-      },
-      {
-        id: 'field-tag-date',
-        name: 'Date',
-        groups: [
-          'Calendar',
-          'Timepicker'
-        ]
-      },
-      {
-        id: 'field-tag-some-tag',
-        name: 'Some Tag',
-        groups: [
-          'Some Tag Group',
-          'Tag 3'
-        ]
-      }
-    ]);
-  }, 500);
-});
-
 // export available create-field api calls
 export default {
   fetchConfig,
-  fetchFieldDetails,
-  fetchFieldTags
+  fetchFieldDetails
 };

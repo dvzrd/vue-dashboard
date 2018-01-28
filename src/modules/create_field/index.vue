@@ -4,11 +4,23 @@
     v-bind:class="`container ${config.id}__container`"
   >
     <FieldTypesModule />
-    <FieldDetailsContainer
-      :config="config.main"
-      :fieldDetails="fieldDetails"
-      :fieldTags="fieldTags"
-    />
+    <!-- create-field__field-details -->
+    <section
+      id="field-details"
+      v-bind:class="`wrapper main__wrapper ${config.id}__field-details--main`"
+    >
+      <header v-bind:class="`header main__header ${config.id}__field-details--header`">
+        <h3
+          v-bind:class="`heading heading--brief main__heading ${config.id}__field-details--heading`"
+        >
+          Field Details
+        </h3>
+      </header>
+      <FieldDetailsList
+        :fieldDetails="fieldDetails"
+      />
+      <FieldTagsModule />
+    </section>
     <FieldGroupsModule />
   </form>
 </template>
@@ -17,25 +29,22 @@
   import { mapGetters } from 'vuex';
   import store from './_store';
   import FieldTypesModule from '../field_types';
+  import FieldDetailsList from './_components/field_details__list';
+  import FieldTagsModule from '../field_tags';
   import FieldGroupsModule from '../field_groups';
-  import FieldDetailsContainer from './_containers/create_field__details';
   export default {
     name: 'create-field-container',
     components: {
       FieldTypesModule,
-      FieldGroupsModule,
-      FieldDetailsContainer,
+      FieldDetailsList,
+      FieldTagsModule,
+      FieldGroupsModule
     },
     computed: {
       ...mapGetters({
-        // TODO: break up into seperate modules
         config: '$_createField/config',
-        // this will remain here as create field components
         fieldDetails: '$_createField/fieldDetails',
-        fieldReferenceName: '$_createField/fieldReferenceName',
-        // TODO: move to fieldTags module
-        fieldTags: '$_createField/fieldTags',
-        selectedTagGroup: '$_createField/selectedTagGroup'
+        fieldReferenceName: '$_createField/fieldReferenceName'
       })
     },
     created() {
@@ -44,7 +53,56 @@
     mounted() {
       this.$store.dispatch('$_createField/getConfig');
       this.$store.dispatch('$_createField/getFieldDetails');
-      this.$store.dispatch('$_createField/getFieldTags');
     }
   }
 </script>
+
+
+<style lang="scss" scoped>
+  // import color palette variables
+  @import '../../theme/palette';
+  // import design structure variables
+  @import '../../theme/structure';
+  // import design composition variables
+  @import '../../theme/composition';
+  // import design content variables
+  @import '../../theme/content';
+
+  // TODO: create modular dashboard components that share similar styles
+
+  .main__wrapper {
+    align-content: flex-start;
+
+    @media only screen and (min-width: $phablet) {
+      order: 3;
+    }
+
+    @media only screen and (min-width: $tablet) {
+      margin-right: $frame-rec;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      flex: 2;
+      margin-top: $space-push;
+      border-left: $border-dash $bali;
+    }
+  }
+
+  .main__header {
+    flex: $fill-base;
+    padding: $space-frame;
+    background: $bayoux;
+
+    @media only screen and (min-width: $desktop) {
+      position: fixed;
+      top: $space-shove;
+    }
+  }
+
+  .main__heading {
+    margin: 0;
+    color: $athens;
+    font-size: $space-trim;
+    text-transform: uppercase;
+  }
+</style>

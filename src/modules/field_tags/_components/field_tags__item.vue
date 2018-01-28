@@ -1,7 +1,12 @@
 <template>
   <li
     v-bind:id="fieldTag.id"
-    class="item toolbar__item field-tags__item">
+    v-bind:class="{
+      'item tags__item field-tags__item': true,
+      'selected': selected
+    }"
+    v-on:click="handleSelectFieldTagsGroup"
+  >
       <span
         class="tag field-tags__tag"
         v-text="fieldTag.name"
@@ -14,8 +19,17 @@
   export default {
     name: 'field-tags-item',
     props: {
+      selected: {
+        type: Boolean
+      },
       fieldTag: {
         type: Object
+      }
+    },
+    methods: {
+      handleSelectFieldTagsGroup () {
+        const fieldTagsGroupId = this.fieldTag.id;
+        this.$store.dispatch('$_fieldTags/selectFieldTagsGroup', fieldTagsGroupId);
       }
     }
   };
@@ -35,9 +49,19 @@
   }
 
   .field-tags__tag {
+    cursor: pointer;
+    text-align: center;
     padding: $gutter-label;
     background: $loblolly;
     font-size: $size-legal;
-    text-align: center;
+    transition: $shift-base;
+
+    &:hover {
+      background: $cadet;
+    }
+
+    .selected & {
+      background: $bali;
+    }
   }
 </style>

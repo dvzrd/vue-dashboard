@@ -40,6 +40,7 @@
 
   .main__container {
     align-items: flex-start;
+    align-content: flex-start;
     padding: $space-frame;
 
     @media only screen and (min-width: $tablet) {

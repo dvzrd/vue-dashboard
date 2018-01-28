@@ -1,14 +1,15 @@
 <template>
   <ul
     id="field-tags-list"
-    class="list toolbar__list field-tags__list">
+    class="list tags__list field-tags__list">
     <fieldTagsItem
       v-for="fieldTag in fieldTags"
       :key="fieldTag.id"
+      :selected="fieldTag.id === selectedFieldTagsGroup"
       :fieldTag="fieldTag"
     />
     <li
-      class="item field-tags__spinner"
+      class="item field-tags__loading"
       v-if="!fieldTags || fieldTags.length === 0"
     >
       Fetching available field tags...
@@ -24,6 +25,9 @@
       fieldTagsItem
     },
     props: {
+      selectedFieldTagsGroup: {
+        type: String
+      },
       fieldTags: {
         type: Array
       }

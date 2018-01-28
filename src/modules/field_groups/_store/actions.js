@@ -39,10 +39,19 @@ const getFieldGroups = context =>
 const selectFieldGroup = (context, fieldGroupId) =>
   context.commit('SELECTED_FIELD_GROUP_UPDATED', fieldGroupId);
 
+/**
+ * createNewFieldGroup - commit createNewFieldGroup state changes on createNewFieldGroup toggle action
+ *
+ * @param {Object} context - methods/params needed to complete action
+ */
+const createNewFieldGroup = context =>
+  context.commit('CREATE_NEW_FIELD_GROUP_CLICKED');
+
 
 // export available field-groups actions for container
 export default {
   getConfig,
   getFieldGroups,
-  selectFieldGroup
+  selectFieldGroup,
+  createNewFieldGroup
 };

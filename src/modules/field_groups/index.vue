@@ -25,6 +25,7 @@
           type="button"
           v-bind:class="`button button--brand ${config.pattern}__button ${config.id}__${config.pattern}--button`"
           v-text="config.cta"
+          v-on:click="handleCreateNewFieldGroup"
         >
         </button>
       </footer>
@@ -47,6 +48,12 @@
         fieldGroups: '$_fieldGroups/fieldGroups',
         selectedFieldGroup: '$_fieldGroups/selectedFieldGroup'
       })
+    },
+    methods: {
+      handleCreateNewFieldGroup () {
+        this.$store.dispatch('$_fieldGroups/createNewFieldGroup');
+        console.log('show create new field group form');
+      }
     },
     created() {
       this.$store.registerModule('$_fieldGroups', store);
