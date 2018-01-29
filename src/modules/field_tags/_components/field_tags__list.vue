@@ -41,6 +41,7 @@
 
   .field-tags__list {
     display: flex;
+    flex-flow: row wrap;
     flex: $fill-base;
   }
 </style>

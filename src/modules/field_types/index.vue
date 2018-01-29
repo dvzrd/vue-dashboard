@@ -62,6 +62,8 @@
 
   // TODO: create reusable dashboard components and import them into this container
   .toolbar__wrapper {
+    background: $ground-base;
+
     @media only screen and (min-width: $phablet) {
       flex: 2;
       border-right: $border-dash $bali;

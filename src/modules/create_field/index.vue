@@ -6,20 +6,25 @@
     <FieldTypesModule />
     <!-- create-field__field-details -->
     <section
-      id="field-details"
-      v-bind:class="`wrapper main__wrapper ${config.id}__field-details--main`"
+      id="config.main"
+      v-bind:class="`wrapper main__wrapper ${config.id}__${config.main}--main`"
     >
-      <header v-bind:class="`header main__header ${config.id}__field-details--header`">
-        <h3
-          v-bind:class="`heading heading--brief main__heading ${config.id}__field-details--heading`"
-        >
-          Field Details
-        </h3>
-      </header>
-      <FieldDetailsList
-        :fieldDetails="fieldDetails"
-      />
-      <FieldTagsModule />
+      <figure v-bind:class="`container main__container ${config.id}__${config.main}--container`">
+        <figcaption v-bind:class="`caption main__caption ${config.id}__${config.main}--caption`">
+          <h3
+            v-bind:class="`heading heading--brief main__heading ${config.id}__${config.main}--heading`"
+            v-text="config.name"
+          >
+          </h3>
+        </figcaption>
+        <div v-bind:class="`main ${config.id}__main ${config.id}__${config.main}--main`">
+          <FieldDetailsList
+            :fieldReferenceName="fieldReferenceName"
+            :fieldDetails="fieldDetails"
+          />
+          <FieldTagsModule />
+        </div>
+      </figure>
     </section>
     <FieldGroupsModule />
   </form>
@@ -71,8 +76,6 @@
   // TODO: create modular dashboard components that share similar styles
 
   .main__wrapper {
-    align-content: flex-start;
-
     @media only screen and (min-width: $phablet) {
       order: 3;
     }
@@ -88,7 +91,13 @@
     }
   }
 
-  .main__header {
+  .main__container {
+    align-content: flex-start;
+  }
+
+  .main__caption {
+    z-index: 3;
+    width: 100%;
     flex: $fill-base;
     padding: $space-frame;
     background: $bayoux;
@@ -104,5 +113,25 @@
     color: $athens;
     font-size: $space-trim;
     text-transform: uppercase;
+  }
+
+  .create-field__main {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    max-width: $container-base;
+
+    @media only screen and (min-width: $tablet) {
+      max-width: $container-tablet;
+    }
+
+    @media only screen and (min-width: $laptop) {
+      max-width: $container-laptop;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      margin-top: $space-core;
+    }
   }
 </style>

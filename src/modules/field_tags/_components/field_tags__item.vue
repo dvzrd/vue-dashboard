@@ -50,6 +50,7 @@
 
   .field-tags__tag {
     cursor: pointer;
+    display: block;
     text-align: center;
     padding: $gutter-label;
     background: $loblolly;
@@ -62,6 +63,7 @@
 
     .selected & {
       background: $bali;
+      color: $athens;
     }
   }
 </style>

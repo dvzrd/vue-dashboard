@@ -145,8 +145,8 @@
     display: block;
     background: transparent;
     text-align: center;
-    font-size: $size-meta;
-    margin-bottom: $space-frame;
+    font-size: $size-legal;
+    margin-bottom: $space-split;
   }
 
   .sidebar__button {

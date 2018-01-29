@@ -86,19 +86,6 @@
     @media only screen and (min-width: $desktop) {
       flex: $fill-base;
     }
-
-    &.selected {
-      order: 0;
-      flex: $fill-base;
-
-      @media only screen and (min-width: $laptop) {
-        flex: $fill-half;
-      }
-
-      @media only screen and (min-width: $desktop) {
-        flex: $fill-base;
-      }
-    }
   }
 
   // field types item card
@@ -106,7 +93,7 @@
     cursor: pointer;
     margin: 0;
     padding: $space-frame;
-    background: $ground-base;
+    background: $athens;
     transition: $shift-base;
 
     &:hover {

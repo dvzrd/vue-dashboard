@@ -30,8 +30,17 @@ const getFieldDetails = context =>
       console.error(error);
     });
 
+/**
+ * setFieldReferenceName - commit fieldReferenceName to store with setFieldReferenceName action
+ *
+ * @param {Object} context - methods/params needed to complete action
+ */
+const setFieldReferenceName = (context, fieldReferenceName) =>
+  context.commit('FIELD_REFERENCE_NAME_UPDATED', fieldReferenceName);
+
 // export available create-field actions for container
 export default {
   getConfig,
-  getFieldDetails
+  getFieldDetails,
+  setFieldReferenceName
 };

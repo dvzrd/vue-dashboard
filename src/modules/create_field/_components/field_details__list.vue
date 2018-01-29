@@ -1,20 +1,21 @@
 <template>
-  <figure
+  <ul
     id="field-details-list"
-    class="container main__container field-details__container"
+    class="list fields__list field-details__list"
   >
     <fieldDetailsItem
       v-for="fieldDetail in fieldDetails"
       :key="fieldDetail.id"
       :fieldDetail="fieldDetail"
+      :fieldReferenceName="fieldReferenceName"
     />
-    <figcaption
-      class="caption main__caption field-details__caption"
+    <li
+      class="item loading__item field-details__loading"
       v-if="!fieldDetails || fieldDetails.length === 0"
     >
       Fetching available field details...
-    </figcaption>
-  </figure>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -27,6 +28,9 @@
     props: {
       fieldDetails: {
         type: Array
+      },
+      fieldReferenceName: {
+        type: String
       }
     }
   };
@@ -38,17 +42,21 @@
   // import design composition variables
   @import '../../../theme/composition';
 
-  .main__container {
+  .field-details__list {
+    display: flex;
+    flex-flow: row wrap;
     align-items: flex-start;
     align-content: flex-start;
+    max-width: $container-base;
     padding: $space-frame;
 
     @media only screen and (min-width: $tablet) {
+      max-width: $container-tablet;
       margin-left: -$space-frame;
     }
 
-    @media only screen and (min-width: $desktop) {
-      margin-top: $space-core;
+    @media only screen and (min-width: $laptop) {
+      max-width: $container-laptop;
     }
   }
 </style>

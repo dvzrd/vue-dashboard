@@ -6,18 +6,13 @@ const fetchConfig = new Promise(resolve => {
     resolve({
       id: 'create-field', // id of create-field module for breadcrumbs
       root: 'commercial-property', // id of main dashboard view for breadcrumbs
-      // TODO: refactor below object keys to strings
-      topbar: {
-        id: 'create-field-topbar', // id of topbar for create-field module
-        name: 'Add Field' // heading of create-field module for dashboard view
-      },
-      main: {
-        id: 'field-details', // id of main for create-field module
-        name: 'Field Details' // heading of main content for module
-      },
-      footer: {
-        id: 'create-field-footer' // id for create-field footer
-      }
+      pattern: 'form', // pattern used for module
+      name: 'Field Details', // heading of create-field module for dashboard view
+      // TODO: use config to chain individual modules together
+      // using id and pattern values to add unified styles
+      topbar: 'create-field-topbar', // id of topbar for create-field module
+      main: 'field-details', // id of main for create-field module
+      footer: 'create-field-footer' // id for create-field footer
     });
   }, 250);
 });
@@ -29,13 +24,13 @@ const fetchFieldDetails = new Promise(resolve => {
   setTimeout(() => {
     resolve([
       {
-        id: 'field-details-label',
-        name: 'display-label',
-        label: 'Display Label',
-        legend: 'For display purposes, spaces allowed',
-        action: true,
-        required: true,
-        error: 'Please provide a display label for the field'
+        id: 'field-details-label', // id of input tied to module
+        name: 'display-label', // name of input tied to form
+        label: 'Display Label', // displays label for input
+        legend: 'For display purposes, spaces allowed', // displays hint for input
+        action: true, // input has action method - on blur updateFieldReferenceName
+        required: true, // input value is required to submit to server
+        error: 'Please provide a display label for the field' // error to display if validation fails
       },
       {
         id: 'field-details-ref',

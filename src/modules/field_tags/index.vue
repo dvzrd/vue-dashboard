@@ -73,7 +73,16 @@
   // TODO: create reusable dashboard components and import them into this container
   .tags__footer {
     display: flex;
+    max-width: $container-base;
     padding: $space-frame;
+
+    @media only screen and (min-width: $tablet) {
+      max-width: $container-tablet;
+    }
+
+    @media only screen and (min-width: $laptop) {
+      max-width: $container-laptop;
+    }
   }
 
   .tags__footer--heading {
@@ -99,6 +108,6 @@
 
   .tags__hint {
     margin-bottom: $space-press;
-    font-size: $space-trim;
+    font-size: $size-legal;
   }
 </style>
