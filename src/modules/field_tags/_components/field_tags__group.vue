@@ -1,14 +1,15 @@
 <template>
   <li
-    v-bind:id="fieldTag.id"
+    v-bind:id="fieldTagGroup.id"
     v-bind:class="{
-      'item tags__item field-tags__item': true,
+      'item tags__item field-tags__group': true,
       'selected': selected
     }"
+    v-on:click="handleSelectFieldTagsGroup"
   >
       <span
         class="tag field-tags__tag"
-        v-text="fieldTag.name"
+        v-text="fieldTagGroup.name"
       >
       </span>
   </li>
@@ -21,8 +22,14 @@
       selected: {
         type: Boolean
       },
-      fieldTag: {
+      fieldTagGroup: {
         type: Object
+      }
+    },
+    methods: {
+      handleSelectFieldTagsGroup () {
+        const fieldTagsGroupId = this.fieldTagGroup.id;
+        this.$store.dispatch('$_fieldTags/selectFieldTagsGroup', fieldTagsGroupId);
       }
     }
   };
@@ -36,25 +43,27 @@
   // import design content variables
   @import '../../../theme/content';;
 
-  .field-tags__item {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
+  .field-tags__group {
     margin-right: $space-press;
     margin-bottom: $space-press;
-    transition: $shift-base;
-
-    &.selected {
-      opacity: 1;
-      visibility: visible;
-      position: relative;
-    }
   }
 
   .field-tags__tag {
+    cursor: pointer;
+    display: block;
     text-align: center;
     padding: $gutter-label;
     background: $loblolly;
     font-size: $size-legal;
+    transition: $shift-base;
+
+    &:hover {
+      background: $cadet;
+    }
+
+    .selected & {
+      background: $bali;
+      color: $athens;
+    }
   }
 </style>

@@ -27,6 +27,7 @@
       </figure>
     </section>
     <FieldGroupsModule />
+    <CreateFieldActions />
   </form>
 </template>
 
@@ -37,13 +38,15 @@
   import FieldDetailsList from './_components/field_details__list';
   import FieldTagsModule from '../field_tags';
   import FieldGroupsModule from '../field_groups';
+  import CreateFieldActions from './_components/create_field__actions';
   export default {
     name: 'create-field-container',
     components: {
       FieldTypesModule,
       FieldDetailsList,
       FieldTagsModule,
-      FieldGroupsModule
+      FieldGroupsModule,
+      CreateFieldActions
     },
     computed: {
       ...mapGetters({

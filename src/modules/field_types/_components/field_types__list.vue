@@ -6,6 +6,7 @@
       v-for="fieldType in fieldTypes"
       :key="fieldType.id"
       :selected="fieldType.id === selectedFieldType"
+      :filtered="fieldTypesFilter.length > 0 && fieldType.type !== fieldTypesFilter"
       :fieldType="fieldType"
     />
     <li
@@ -26,6 +27,9 @@
     },
     props: {
       selectedFieldType: {
+        type: String
+      },
+      fieldTypesFilter: {
         type: String
       },
       fieldTypes: {
@@ -54,6 +58,13 @@
 
     @media only screen and (min-width: $desktop) {
       margin-top: $space-apex + $space-split;
+      margin-bottom: $space-brand;
     }
+  }
+
+  .field-types__loading {
+    margin: 0;
+    margin-left: $space-frame;
+    flex: $fill-base;
   }
 </style>

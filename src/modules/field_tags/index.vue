@@ -1,10 +1,10 @@
 <template>
-  <footer
+  <section
     v-bind:id="config.id"
-    v-bind:class="`footer ${config.pattern}__footer ${config.parent}__${config.id}--footer`"
+    v-bind:class="`container ${config.pattern}__container ${config.parent}__${config.id}--container`"
   >
     <h5
-      v-bind:class="`heading heading--base ${config.pattern}__footer--heading`"
+      v-bind:class="`heading heading--base ${config.pattern}__heading`"
       v-text="config.name"
     >
     </h5>
@@ -14,9 +14,9 @@
         v-text="config.caption"
       >
       </figcaption>
-      <FieldTagsList
+      <FieldTagsGroups
         :selectedFieldTagsGroup="selectedFieldTagsGroup"
-        :fieldTags="fieldTagsGroups"
+        :fieldTagsGroups="fieldTagsGroups"
       />
     </figure>
     <figure v-bind:class="`frame ${config.pattern}__frame ${config.id}__${config.pattern}--frame`">
@@ -25,22 +25,29 @@
         v-text="config.name"
       >
       </figcaption>
+      <FieldTagsList
+        :selectedFieldTagsGroup="selectedFieldTagsGroup"
+        :fieldTags="fieldTags"
+      />
       <p
+        v-if="selectedFieldTagsGroup.length === 0"
         v-bind:class="`context context--hint ${config.pattern}__hint ${config.id}__${config.pattern}--hint`"
         v-text="config.hint"
       >
       </p>
     </figure>
-  </footer>
+  </section>
 </template>
 
 <script>
   import { mapGetters } from 'vuex';
   import store from './_store';
+  import FieldTagsGroups from './_components/field_tags__groups';
   import FieldTagsList from './_components/field_tags__list';
   export default {
     name: 'field-tags-module',
     components: {
+      FieldTagsGroups,
       FieldTagsList
     },
     computed: {
@@ -71,7 +78,7 @@
   @import '../../theme/content';
 
   // TODO: create reusable dashboard components and import them into this container
-  .tags__footer {
+  .tags__container {
     display: flex;
     max-width: $container-base;
     padding: $space-frame;
@@ -85,7 +92,7 @@
     }
   }
 
-  .tags__footer--heading {
+  .tags__heading {
     margin-top: $space-split;
     font-size: $size-base;
   }

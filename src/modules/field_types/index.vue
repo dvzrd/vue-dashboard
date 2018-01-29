@@ -11,11 +11,16 @@
         >
         </h3>
       </figcaption>
-      <FieldTypesFilter v-if="config.filter"/>
-      <FieldTypesList
-        :selectedFieldType="selectedFieldType"
-        :fieldTypes="fieldTypes"
-      />
+      <div v-bind:class="`list-container ${config.pattern}__list-container ${config.id}__${config.pattern}--list-container`">
+        <FieldTypesFilter
+          v-if="config.filter"
+        />
+        <FieldTypesList
+          :selectedFieldType="selectedFieldType"
+          :fieldTypesFilter="fieldTypesFilter"
+          :fieldTypes="fieldTypes"
+        />
+      </div>
     </figure>
   </aside>
 </template>
@@ -101,5 +106,10 @@
     color: $athens;
     font-size: $space-trim;
     text-transform: uppercase;
+  }
+
+  // TODO: fixed scrollable sidebar
+  .toolbar__list-container {
+    width: 100%;
   }
 </style>

@@ -10,7 +10,7 @@
       name="filter"
       class="input input__filter field-types__filter--input"
       placeholder="Filter by field type"
-      @input="updateFieldTypesFilter"
+      @input="handleSetFieldTypesFilter"
     />
   </form>
 </template>
@@ -19,9 +19,13 @@
   export default {
     name: 'field-types-filter',
     methods: {
-      updateFieldTypesFilter (event) {
-        console.log('store event value', event.target.value);
-        // this.$store.commit('updateFilter', event.target.value);
+      handleSetFieldTypesFilter (event) {
+        // TODO: add watches to wait until user stop typing to filter list
+        // Reference: https://vuejs.org/v2/guide/computed.html
+        // Need to refactor to use filterByType action and filteredByType state
+        // Reference: https://pastebin.com/w58AmPPJ
+        const fieldTypesFilter = event.target.value;
+        this.$store.dispatch('$_fieldTypes/setFieldTypesFilter', fieldTypesFilter);
       }
     }
   };

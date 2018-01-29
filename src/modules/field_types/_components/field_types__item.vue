@@ -3,7 +3,8 @@
     v-bind:id="fieldType.id"
     v-bind:class="{
       'item toolbar__item field-types__item': true,
-      'selected': selected
+      'selected': selected,
+      'filtered': filtered
     }"
     v-on:click="handleSelectFieldType"
   >
@@ -44,6 +45,9 @@
     name: 'field-types-item',
     props: {
       selected: {
+        type: Boolean
+      },
+      filtered: {
         type: Boolean
       },
       fieldType: {
@@ -104,6 +108,10 @@
     .selected & {
       background: $lynch;
       color: $loblolly;
+    }
+
+    .filtered & {
+      display: none;
     }
   }
 

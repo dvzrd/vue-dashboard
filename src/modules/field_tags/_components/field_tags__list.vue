@@ -2,10 +2,10 @@
   <ul
     id="field-tags-list"
     class="list tags__list field-tags__list">
-    <fieldTagsItem
+    <FieldTagsItem
       v-for="fieldTag in fieldTags"
       :key="fieldTag.id"
-      :selected="fieldTag.id === selectedFieldTagsGroup"
+      :selected="fieldTag.groups.indexOf(selectedFieldTagsGroup) > -1"
       :fieldTag="fieldTag"
     />
     <li
@@ -18,11 +18,11 @@
 </template>
 
 <script>
-  import fieldTagsItem from './field_tags__item';
+  import FieldTagsItem from './field_tags__item';
   export default {
     name: 'field-tags-list',
     components: {
-      fieldTagsItem
+      FieldTagsItem
     },
     props: {
       selectedFieldTagsGroup: {
